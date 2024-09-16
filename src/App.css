@@ -76,5 +76,14 @@ input,
 textarea {
   font-family: 'Source Code Pro', monospace; /* Apply same font to input and textarea */
 }
+@media (max-width: 768px) {
+  body {
+      overflow-x: hidden;
+  }
+}
+
+
+
+
 
 

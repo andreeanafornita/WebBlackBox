@@ -351,7 +351,7 @@
     }
   
     .anpcLogo, .solLogo {
-      margin-left: 30rem; /* Adăugăm spațiu de 1rem sub logo */
+      margin-left: 5rem; /* Adăugăm spațiu de 1rem sub logo */
     }
     .companyName {
         font-size: 1.5rem; /* Diminuăm dimensiunea fontului pentru logo */
