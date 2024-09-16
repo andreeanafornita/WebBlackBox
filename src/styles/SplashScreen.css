@@ -1,0 +1,21 @@
+/* src/components/SplashScreen.css */
+.splash-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+      color: #ae8507; /* Your gold color */
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+  }
+  
+  .splash-container.fade-out {
+      opacity: 0;
+  }
+  
+  .splash-text {
+      font-size: 3rem;
+      font-weight: bold;
+  }
+  

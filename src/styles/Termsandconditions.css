@@ -1,0 +1,107 @@
+/* Container style */
+.terms-container {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 1.875rem; /* 30px */
+  max-width: 1100px; /* 800px */
+  margin: 2.5rem auto; /* 40px auto */
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0 0 0.9375rem rgba(255, 255, 255, 0.1); /* 15px shadow */
+  animation: fadeIn 2s ease-in-out; /* Animation for the whole container */
+}
+
+/* Heading style */
+.terms-heading {
+  font-size: 4.5rem; /* 28px */
+  font-weight: bold;
+  margin-bottom: 1.25rem; /* 20px */
+  text-align: center;
+  animation: slideIn 1.5s ease-out; /* Animation for heading */
+  color: goldenrod;
+}
+
+/* Subheading style */
+.terms-subheading {
+  font-size: 3rem; /* 22px */
+  font-weight: bold;
+  margin-top: 1.875rem; /* 30px */
+  margin-bottom: 0.9375rem; /* 15px */
+  position: relative;
+  padding-bottom: 0.3125rem; /* 5px */
+  border-bottom: 0.125rem solid goldenrod; /* 2px */
+  transition: color 0.3s ease;
+  color: goldenrod;
+}
+
+/* Text style */
+.terms-text {
+  font-size: 2rem; /* 16px */
+  line-height: 1.8;
+  margin-bottom: 1.25rem; /* 20px */
+  text-align: justify;
+  transition: color 0.3s ease;
+}
+
+/* List style */
+.terms-list {
+  margin-left: 2.5rem; /* 40px */
+  margin-bottom: 1.25rem; /* 20px */
+  list-style-type: disc;
+  font-size: 2rem; /* 16px */
+}
+
+/* Add hover effects */
+.terms-subheading:hover {
+  color: #ffd700; /* Gold color on hover */
+}
+
+.terms-text:hover {
+  color: #dcdcdc; /* Light gray on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1.25rem); /* -20px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 48rem) { /* 768px */
+  .terms-container {
+    padding: 1.25rem; /* 20px */
+    margin: 1.25rem; /* 20px */
+  }
+
+  .terms-heading {
+    font-size: 2.5rem; /* 24px */
+  }
+
+  .terms-subheading {
+    font-size: 2rem; /* 18px */
+  }
+
+  .terms-text {
+    font-size: 1.6rem; /* 14px */
+  }
+  .terms-list{
+    font-size: 1.5rem;
+   
+  }
+}

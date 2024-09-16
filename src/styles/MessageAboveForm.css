@@ -1,0 +1,24 @@
+/* MessageAboveForm.css */
+.message-above-form-message-container {
+    text-align: center;
+    margin-bottom: 2rem; /* Add some space between message and form */
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #000000, #ae8507); 
+margin-top: 10rem; }
+  
+  .message-above-form-message-text {
+    font-size: 3rem;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Add a fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

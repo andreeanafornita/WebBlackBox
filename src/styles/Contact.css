@@ -1,0 +1,497 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: black; /* Fundal întunecat pentru contrast */
+  overflow-x: hidden;
+}
+
+.contactus-page {
+  display: flex;
+  flex-direction: column; /* Afișează elementele ca o coloană verticală */
+  align-items: center; /* Centrează elementele pe orizontală */
+  justify-content: flex-start; /* Aliniere la începutul containerului */
+  min-height: 100vh; /* Înălțime minimă pentru a ocupa întregul ecran */
+  padding-bottom: 2rem; /* Adaugă spațiu sub componenta finală */
+}
+
+.contactus-hero {
+  width: 100%; /* Face ca secțiunea să ocupe toată lățimea containerului */
+  background: linear-gradient(90deg, #000000, #3f3f3f, #595959);
+  color: white;
+  padding: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactus-hero-content {
+  max-width: 700px; /* Lățime mai mare pentru a folosi mai bine spațiul */
+  margin: 0 auto;
+}
+
+.contactus-hero-title {
+  font-size: 7.5rem; /* Font mult mai mare pentru titlu */
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: white; /* Text alb pentru titlu */
+}
+
+.contactus-hero-subtitle {
+  font-size: 5.5rem; /* Font mai mare pentru subtitlu */
+  margin-bottom: 4.5rem;
+  color: white; /* Text alb pentru subtitlu */
+}
+
+.intro-text-container {
+  margin-bottom: 2rem; /* Spațiu de sub textul introdus */
+  text-align: center; /* Centrare text */
+  color: white; /* Asigură că textul este vizibil pe fundal negru */
+  font-size: 2rem; /* Dimensiune font uniformă */
+}
+
+.contactus-form {
+  width: 100%; /* Face ca secțiunea să ocupe toată lățimea containerului */
+  max-width: 700px; /* Lățime maximă pentru formular */
+  padding: 4rem;
+  background: black; /* Fundal negru pentru contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow pentru un efect de adâncime */
+  border-radius: 8px; /* Colțuri rotunjite */
+  margin-bottom: 2rem; /* Spațiu sub formular */
+}
+
+.contactus-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactus-form label {
+  margin: 2rem 0 0.3rem;
+  font-weight: bold;
+  font-size: 2rem; /* Font mai mare pentru etichete */
+  color: white; /* Text alb pentru etichete */
+}
+
+.contactus-form input,
+.contactus-form textarea {
+  padding: 0.5rem; /* Redus pentru a pune accent pe linie */
+  margin-bottom: 1.2rem;
+  border: none; /* Elimină bordura implicită */
+  border-bottom: 3px solid white; /* Linia albă de subliniere */
+  background: transparent; /* Fundal transparent */
+  font-size: 2rem; /* Font uniform pentru input-uri */
+  color: white; /* Text alb în interiorul input-urilor */
+  outline: none; /* Elimină outline-ul implicit */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Tranziție lină */
+  width: 100%; /* Face input-urile și textarea să fie la lățimea maximă a containerului */
+  font-family: 'Source Code Pro', monospace;
+}
+
+.contactus-form input:focus,
+.contactus-form textarea:focus {
+  border-bottom-color: #ae8507; /* Linia de subliniere devine aurie pe focus */
+  box-shadow: 0 2px 8px rgba(174, 133, 7, 0.4); /* Shadow aurie pe focus */
+}
+
+.contactus-form textarea {
+  resize: vertical;
+  height: 150px; /* Dimensiune uniformă pentru textarea */
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center; /* Aliniază checkbox-ul și textul pe aceeași linie */
+  margin-top: 1.5rem;
+  gap: 1rem; /* Spațiu uniform între checkbox și text */
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin: 0; /* Elimină marginile checkbox-ului */
+  transform: scale(1.5); /* Mărime mai mare pentru checkbox */
+  appearance: none; /* Elimină stilurile implicite ale browserului */
+  -webkit-appearance: none; /* Elimină stilurile implicite ale browserului pentru Safari */
+  background-color: transparent; /* Elimină fundalul implicit */
+  border: 2px solid white; /* Bordura albă pentru checkbox */
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer; /* Schimbă cursorul pentru a indica o acțiune */
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #ae8507; /* Fundal galben pentru checkbox-ul bifat */
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+  outline: none; /* Elimină linia de focus pentru checkbox-uri */
+  box-shadow: none; /* Elimină orice umbră la focus */
+}
+
+.checkbox-group label {
+  font-size: 1.5rem; /* Dimensiune font ajustată pentru etichete */
+  color: white; /* Text alb pentru etichete */
+  margin: 1.5rem; /* Elimină marginile suplimentare */
+}
+
+.warning-text {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  color: white; /* Text alb pentru mesajul de avertizare */
+}
+
+.warning-message {
+  background-color: #ae8507; /* Fundal aurie pentru mesaje de avertizare */
+  color: white; /* Text alb */
+  padding: 1rem;
+  border-radius: 8px; /* Colțuri rotunjite */
+  margin-top: 7rem; /* Mărește marginile de sus și jos */
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.submit-button {
+  background-color: #ae8507;
+  color: white;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 12px; /* Colțuri rotunjite */
+  cursor: pointer;
+  font-size: 3rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 3.5rem; /* Mărește spațiul deasupra butonului */
+}
+
+.submit-button:hover {
+  background-color: #8c6b07;
+  transform: scale(1.05);
+}
+
+.contactus-info-container {
+  margin-top: 2rem; /* Spațiu deasupra containerului de informații */
+  padding: 2rem; /* Spațiu intern pentru a oferi un aspect mai aerisit */
+  background-color: rgba(255, 255, 255, 0.1); /* Fundal semi-transparent pentru contrast */
+  border-radius: 8px; /* Colțuri rotunjite */
+  width: 100%; /* Asigură că containerul ocupă toată lățimea */
+  text-align: center; /* Centrează textul în container */
+}
+
+.contactus-info {
+  font-size: 2rem; /* Ajustează dimensiunea fontului */
+  color: white; /* Culoare albă pentru text */
+  margin: 0.5rem 0; /* Spațiu între rânduri */
+}
+
+.contactus-getintouch {
+  font-size: 3rem; /* Dimensiune mai mare pentru Let's get in touch */
+  color: #ae8507; /* Culoare aurie pentru a se potrivi cu alte elemente de accent */
+  margin-top: 1rem; /* Margine deasupra pentru spațiu */
+  text-align: center; /* Centrare text */
+}
+
+.socials-container {
+  margin: 2rem auto; /* Center horizontally */
+  padding: 2rem;
+  background-color: transparent !important; /* Force transparent background */
+  border-radius: 0; /* Remove rounded corners */
+  text-align: center; /* Center text */
+  max-width: 500px; /* Max width for container */
+  width: 80%; /* Full width */
+  border: none !important; /* Remove any border */
+  box-shadow: none !important; /* Remove any shadow */
+}
+
+.socials-list {
+  list-style: none; /* Elimină bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around; /* Spațiu egal între elemente */
+  align-items: center; /* Centrare pe verticală */
+}
+
+.socials-item {
+  margin: 0.5rem;
+  font-size: 1.5rem; /* Dimensiune font pentru numele rețelelor sociale */
+}
+
+.socials-item a {
+  text-decoration: none; /* Elimină sublinierea link-urilor */
+  color: white; /* Text alb pentru contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icon {
+  font-size: 2.5rem; /* Dimensiune font pentru iconițe */
+  margin-bottom: 0.5rem; /* Spațiu între iconiță și text */
+  transition: transform 0.3s ease; /* Tranziție lină pentru hover */
+}
+
+.socials-item a:hover .social-icon {
+  transform: scale(1.1); /* Mărește iconița la hover */
+}
+.warning-message {
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  border: 2px solid #ae8507; /* Aur */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+.thank-you-message {
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  border: 2px solid #ae8507; /* Aur */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width:768px){
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Fundal întunecat pentru contrast */
+    overflow-x: hidden;
+  }
+  
+  .contactus-page {
+    display: flex;
+    flex-direction: column; /* Afișează elementele ca o coloană verticală */
+    align-items: center; /* Centrează elementele pe orizontală */
+    justify-content: flex-start; /* Aliniere la începutul containerului */
+    min-height: 100vh; /* Înălțime minimă pentru a ocupa întregul ecran */
+    padding-bottom: 2rem; /* Adaugă spațiu sub componenta finală */
+  }
+  
+  .contactus-hero {
+    width: 100%; /* Face ca secțiunea să ocupe toată lățimea containerului */
+    background: linear-gradient(90deg, #000000, #3f3f3f, #595959);
+    color: white;
+    padding: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contactus-hero-content {
+    max-width: 400px; /* Lățime mai mare pentru a folosi mai bine spațiul */
+    margin: 0 auto;
+  }
+  
+  .contactus-hero-title {
+    font-size: 3.5rem; /* Font mult mai mare pentru titlu */
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: white; /* Text alb pentru titlu */
+  }
+  
+  .contactus-hero-subtitle {
+    font-size: 2rem; /* Font mai mare pentru subtitlu */
+    margin-bottom: 2.5rem;
+    color: white; /* Text alb pentru subtitlu */
+  }
+  
+  .intro-text-container {
+    margin-bottom: 2rem; /* Spațiu de sub textul introdus */
+    text-align: center; /* Centrare text */
+    color: white; /* Asigură că textul este vizibil pe fundal negru */
+    font-size: 1.5rem; /* Dimensiune font uniformă */
+  }
+  
+  .contactus-form {
+    width: 100%; /* Face ca secțiunea să ocupe toată lățimea containerului */
+    max-width: 700px; /* Lățime maximă pentru formular */
+    padding: 4rem;
+    background: black; /* Fundal negru pentru contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow pentru un efect de adâncime */
+    border-radius: 8px; /* Colțuri rotunjite */
+    margin-bottom: 2rem; /* Spațiu sub formular */
+  }
+  
+  .contactus-form form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 3rem;
+  }
+  
+  .contactus-form label {
+    margin: 2rem 0 0.3rem;
+    font-weight: bold;
+    font-size: 1.8rem; /* Font mai mare pentru etichete */
+    color: white; /* Text alb pentru etichete */
+   
+  }
+  
+  .contactus-form input,
+  .contactus-form textarea {
+    padding: 0.5rem; /* Redus pentru a pune accent pe linie */
+    margin-bottom: 1.2rem;
+    border: none; /* Elimină bordura implicită */
+    border-bottom: 3px solid white; /* Linia albă de subliniere */
+    background: transparent; /* Fundal transparent */
+    font-size: 1.5rem; /* Font uniform pentru input-uri */
+    color: white; /* Text alb în interiorul input-urilor */
+    outline: none; /* Elimină outline-ul implicit */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Tranziție lină */
+    width: 100%; /* Face input-urile și textarea să fie la lățimea maximă a containerului */
+    font-family: 'Source Code Pro', monospace;
+  }
+  
+  .contactus-form input:focus,
+  .contactus-form textarea:focus {
+    border-bottom-color: #ae8507; /* Linia de subliniere devine aurie pe focus */
+    box-shadow: 0 2px 8px rgba(174, 133, 7, 0.4); /* Shadow aurie pe focus */
+  }
+  
+  .contactus-form textarea {
+    resize: vertical;
+    height: 150px; /* Dimensiune uniformă pentru textarea */
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center; /* Aliniază checkbox-ul și textul pe aceeași linie */
+    margin-top: 1.5rem;
+    gap: 1rem; /* Spațiu uniform între checkbox și text */
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin: 0; /* Elimină marginile checkbox-ului */
+    transform: scale(1.5); /* Mărime mai mare pentru checkbox */
+    appearance: none; /* Elimină stilurile implicite ale browserului */
+    -webkit-appearance: none; /* Elimină stilurile implicite ale browserului pentru Safari */
+    background-color: transparent; /* Elimină fundalul implicit */
+    border: 2px solid white; /* Bordura albă pentru checkbox */
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer; /* Schimbă cursorul pentru a indica o acțiune */
+  }
+  
+  .checkbox-group input[type="checkbox"]:checked {
+    background-color: #ae8507; /* Fundal galben pentru checkbox-ul bifat */
+  }
+  
+  .checkbox-group input[type="checkbox"]:focus {
+    outline: none; /* Elimină linia de focus pentru checkbox-uri */
+    box-shadow: none; /* Elimină orice umbră la focus */
+  }
+  
+  .checkbox-group label {
+    font-size: 1.5rem; /* Dimensiune font ajustată pentru etichete */
+    color: white; /* Text alb pentru etichete */
+    margin: 1.5rem; /* Elimină marginile suplimentare */
+  }
+  
+  .warning-text {
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    color: white; /* Text alb pentru mesajul de avertizare */
+  }
+  
+  .warning-message {
+    background-color: #ae8507; /* Fundal aurie pentru mesaje de avertizare */
+    color: white; /* Text alb */
+    padding: 1rem;
+    border-radius: 8px; /* Colțuri rotunjite */
+    margin-top: 7rem; /* Mărește marginile de sus și jos */
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .submit-button {
+    background-color: #ae8507;
+    color: white;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 12px; /* Colțuri rotunjite */
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 3.5rem; /* Mărește spațiul deasupra butonului */
+  }
+  
+  .submit-button:hover {
+    background-color: #8c6b07;
+    transform: scale(1.05);
+  }
+  
+  .contactus-info-container {
+    margin-top: 2rem; /* Spațiu deasupra containerului de informații */
+    padding: 2rem; /* Spațiu intern pentru a oferi un aspect mai aerisit */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundal semi-transparent pentru contrast */
+    border-radius: 8px; /* Colțuri rotunjite */
+    width: 100%; /* Asigură că containerul ocupă toată lățimea */
+    text-align: center; /* Centrează textul în container */
+  }
+  
+  .contactus-info {
+    font-size: 1.8rem; /* Ajustează dimensiunea fontului */
+    color: white; /* Culoare albă pentru text */
+    margin: 0.5rem 0; /* Spațiu între rânduri */
+  }
+  
+  .contactus-getintouch {
+    font-size: 2rem; /* Dimensiune mai mare pentru Let's get in touch */
+    color: #ae8507; /* Culoare aurie pentru a se potrivi cu alte elemente de accent */
+    margin-top: 1rem; /* Margine deasupra pentru spațiu */
+    text-align: center; /* Centrare text */
+  }
+  
+  .socials-container {
+    margin: 2rem auto; /* Center horizontally */
+    padding: 2rem;
+    background-color: transparent !important; /* Force transparent background */
+    border-radius: 0; /* Remove rounded corners */
+    text-align: center; /* Center text */
+    max-width: 500px; /* Max width for container */
+    width: 80%; /* Full width */
+    border: none !important; /* Remove any border */
+    box-shadow: none !important; /* Remove any shadow */
+}
+  
+  .socials-list {
+    list-style: none; /* Elimină bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Spațiu egal între elemente */
+    align-items: center; /* Centrare pe verticală */
+  }
+  
+  .socials-item {
+    margin: 0.5rem;
+    font-size: 1.5rem; /* Dimensiune font pentru numele rețelelor sociale */
+  }
+  
+  .socials-item a {
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+    color: white; /* Text alb pentru contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-icon {
+    font-size: 2.5rem; /* Dimensiune font pentru iconițe */
+    margin-bottom: 0.5rem; /* Spațiu între iconiță și text */
+    transition: transform 0.3s ease; /* Tranziție lină pentru hover */
+  }
+  
+  .socials-item a:hover .social-icon {
+    transform: scale(1.1); /* Mărește iconița la hover */
+  }
+}

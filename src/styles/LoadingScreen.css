@@ -1,0 +1,68 @@
+.loading-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 2.5s ease-in-out; /* Animație fade-out mai lentă */
+}
+
+.fade-out {
+  opacity: 0; /* Dispariția ecranului de încărcare */
+}
+
+.logo {
+  position: relative;
+  z-index: 2; /* Logo-ul este deasupra punctelor */
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.counter {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  z-index: 2; /* Counter-ul este deasupra punctelor */
+}
+
+.fade-out-counter {
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Dispariția counter-ului */
+}
+
+/* Container pentru punctele exploziei */
+.dots-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrat în jurul logo-ului */
+  z-index: 1; /* Punctele sunt sub logo */
+}
+
+/* Stiluri pentru punctele random */
+.dot {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: white;
+  border-radius: 50%;
+  transform-origin: center;
+  opacity: 1;
+  animation: explodeDots 2.5s ease-in-out forwards; /* Animație pentru explozia punctelor mai lentă */
+}
+
+/* Animația exploziei */
+@keyframes explodeDots {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--angle)) translate(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translate(var(--distance)) scale(1.5); /* Explozie și dispariție */
+  }
+}

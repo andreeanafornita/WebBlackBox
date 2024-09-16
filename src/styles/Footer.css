@@ -1,0 +1,475 @@
+.footer {
+      background-color: rgba(0, 0, 0, 0.8); /* Fundal negru semitransparent */
+      color: white;
+      padding: 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      border-top: 2px solid white;
+      margin-top: 2rem;
+      width: 100%;
+      z-index: 1; /* Asigurăm că este deasupra imaginii */
+      overflow: hidden; /* Asigură că imaginea nu iese din container */
+  }
+  
+  .mainContentContainer {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1; /* Asigurăm că este deasupra imaginii */
+  }
+  
+  .leftSection {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 40%;
+      position: relative;
+      padding-bottom: 2rem;
+      z-index: 2; /* Asigurăm că este deasupra imaginii */
+  }
+  
+  .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin-bottom: 1rem;
+  }
+  
+  .logoImage {
+      height: 5rem;
+      margin-right: 1rem;
+  }
+  
+  .companyName {
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+  }
+  
+  .companyNameWhite {
+      color: white;
+      margin-right: 0.5rem;
+  }
+  
+  .companyNameGold {
+      color: #ae8507;
+  }
+  
+  .navLinks {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .navLink {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      transition: color 0.3s ease;
+  }
+  
+  .navItem {
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 1rem;
+  }
+  
+  .dropdownIcon {
+      margin-left: 0.5rem;
+  }
+  
+  .hoverEffect {
+      color: #ae8507;
+  }
+  
+  .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: black;
+      color: white;
+      box-shadow: 0 0.8rem 1.6rem rgba(0,0,0,0.2);
+      border-radius: 0.5rem;
+      z-index: 999; /* Asigurăm că dropdown-ul este deasupra */
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+  }
+  
+  .dropdownItem {
+      padding: 1rem 1.5rem;
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-size: 1.4rem;
+      white-space: nowrap;
+      transition: color 0.3s ease;
+  }
+  
+  .contactSection {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 1rem;
+  }
+  
+  .contactLink {
+      color: #ae8507;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+  }
+  
+  .contactIcon {
+      margin-right: 0.5rem;
+      font-size: 2rem;
+  }
+  
+  .middleText {
+      font-size: 1.7rem;
+      color: white;
+      margin: 0;
+      white-space: nowrap;
+  }
+  
+  .middleSection {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 15%;
+      position: absolute;
+      left: 25%;
+      top: 2rem;
+      z-index: 1; /* Asigurăm că este deasupra imaginii */
+  }
+  
+  .rightSection {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 10%;
+      position: absolute;
+      left: 45%;
+      top: 2rem;
+      white-space: nowrap;
+      z-index: 2; /* Asigurăm că este deasupra imaginii */
+  }
+  
+  .mottoText {
+      font-size: 2rem;
+      color: #ae8507;
+      margin: 0;
+      font-weight: bold;
+  }
+  
+  .additionalLink {
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+  }
+  
+  .additionalLink:hover {
+      color: #ae8507;
+  }
+  
+  .bottomSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      z-index: 2; /* Asigurăm că este deasupra imaginii */
+  }
+  
+  .socials-container {
+    margin: 2rem auto; /* Center horizontally */
+    padding: 2rem;
+    background-color: transparent !important; /* Force transparent background */
+    border-radius: 0; /* Remove rounded corners */
+    text-align: center; /* Center text */
+    max-width: 500px; /* Max width for container */
+    width: 80%; /* Full width */
+    border: none !important; /* Remove any border */
+    box-shadow: none !important; /* Remove any shadow */
+  }
+  
+  .socials-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .socials-item {
+      margin-right: 1rem;
+  }
+  
+  .socialText {
+      margin-left: 0.5rem;
+      font-size: 1.4rem;
+  }
+  
+  .imageContainer {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%; /* Face imaginea să ocupe toată înălțimea footer-ului */
+      z-index: 0; /* Mutăm imaginea în spate, dar nu prea departe */
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  }
+  
+  .image {
+      height: 100%;
+      width: auto;
+      opacity: 0.4; /* Imaginea are o transparență pentru a nu fi prea proeminentă */
+      object-fit: cover;
+  }
+  
+  .anpcLogoContainer {
+      position: absolute;
+      left: 25%;
+      top: 16%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      z-index: 2; /* Asigurăm că este deasupra imaginii */
+  }
+  
+  .anpcLink, .solLink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      margin-bottom: 1rem;
+  }
+  
+  .anpcLogo, .solLogo {
+      width: 120px;
+      height: auto;
+      transition: transform 0.3s ease;
+  }
+  
+  .anpcLogo:hover, .solLogo:hover {
+      transform: scale(1.1);
+  }
+  
+  @media (max-width: 1024px) {
+      @media (max-width: 1024px) {
+            .companyName {
+                font-size: 1.6rem; /* Diminuăm dimensiunea fontului pentru logo */
+            }
+        
+            .navLink {
+                font-size: 1.4rem; /* Facem link-urile de navigație mai mici */
+            }
+        
+            .mottoText {
+                font-size: 1.6rem; /* Diminuăm fontul pentru motto */
+            }
+        
+            .additionalLink {
+                font-size: 1.3rem; /* Reducem dimensiunea linkurilor suplimentare */
+            }
+        
+            .contactLink {
+                font-size: 1.3rem; /* Reducem dimensiunea fontului pentru secțiunea de contact */
+            }
+        
+            .middleText {
+                font-size: 1.4rem; /* Diminuăm dimensiunea textului pentru locație */
+            }
+        
+            .socialText {
+                font-size: 1.3rem; /* Diminuăm dimensiunea textului din social media */
+            }
+        }
+        .middleSection {
+            left: 27%; /* Mutăm secțiunea mai spre dreapta */
+        }
+    
+        .anpcLogoContainer {
+            left: 29%; /* Mutăm containerul logo-urilor mai spre dreapta */
+        }
+        
+  }
+  @media (max-width: 768px) {
+    .mainContentContainer {
+      display: flex;
+      flex-direction: column; /* Schimbăm direcția în column pentru ca secțiunile să fie una sub alta */
+      align-items: center; /* Asigurăm centrare orizontală */
+      justify-content: center;
+      position: relative;
+      gap: 1rem; /* Adăugăm spațiu de 1rem între secțiuni */
+    }
+  
+    .leftSection,
+    .middleSection,
+    .rightSection {
+      width: 100%; /* Setăm lățimea secțiunilor la 100% pentru a ocupa întreaga lățime */
+      text-align: center; /* Centrăm textul în secțiuni */
+      position: relative; /* Resetăm orice poziționare absolută */
+      transform: none; /* Eliminăm orice transformări aplicate */
+      margin: 0; /* Resetăm marginile pentru consistență */
+      padding: 1rem 0; /* Adăugăm padding pentru spațiu vertical în fiecare secțiune */
+    }
+  
+    .middleSection,
+    .rightSection {
+      left: 0; /* Resetăm orice poziționare laterală */
+      top: 0; /* Resetăm orice poziționare verticală */
+    }
+  
+    .anpcLogoContainer {
+      left: 0; /* Resetăm orice poziționare absolută */
+      text-align: center; /* Centrăm logo-ul */
+      margin: 1rem 0; /* Adăugăm spațiu suplimentar de 1rem în jurul logo-ului */
+    }
+  
+    .anpcLogo, .solLogo {
+      margin-left: 30rem; /* Adăugăm spațiu de 1rem sub logo */
+    }
+    .companyName {
+        font-size: 1.5rem; /* Diminuăm dimensiunea fontului pentru logo */
+    }
+
+    .navLink {
+        font-size: 1.5rem; /* Facem link-urile de navigație mai mici */
+    }
+
+    .mottoText {
+        font-size: 1.5rem;  /* Diminuăm fontul pentru motto */
+    }
+
+    .additionalLink {
+        font-size: 1.5rem;    }
+
+    .contactLink {
+        font-size: 1.5rem;   }
+
+    .middleText {
+        font-size: 1.5rem;   }
+
+    .socialText {
+        font-size: 1.5rem; /* Diminuăm dimensiunea textului din social media */
+    }
+    .socials-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Mutăm conținutul mai la stânga */
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        margin-left: 1rem; /* Mutăm containerul mai la stânga */
+
+      }
+    
+      .socials-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; /* Asigurăm poziționarea corectă a iconițelor */
+        align-items: center;
+      }
+    
+      .socials-item {
+        margin-right: 1rem;
+      }
+    
+      .socialText {
+        margin-left: 0.5rem;
+        font-size: 1.4rem;
+      }
+}
+@media (max-width: 935px) {
+    .mainContentContainer {
+      display: flex;
+      flex-direction: column; /* Schimbăm direcția în column pentru ca secțiunile să fie una sub alta */
+      align-items: center; /* Asigurăm centrare orizontală */
+      justify-content: center;
+      position: relative;
+      gap: 1rem; /* Adăugăm spațiu de 1rem între secțiuni */
+    }
+  
+    .leftSection,
+    .middleSection,
+    .rightSection {
+      width: 100%; /* Setăm lățimea secțiunilor la 100% pentru a ocupa întreaga lățime */
+      text-align: center; /* Centrăm textul în secțiuni */
+      position: relative; /* Resetăm orice poziționare absolută */
+      transform: none; /* Eliminăm orice transformări aplicate */
+      margin: 0; /* Resetăm marginile pentru consistență */
+      padding: 1rem 0; /* Adăugăm padding pentru spațiu vertical în fiecare secțiune */
+    }
+  
+    .middleSection,
+    .rightSection {
+      left: 0; /* Resetăm orice poziționare laterală */
+      top: 0; /* Resetăm orice poziționare verticală */
+    }
+  
+    .anpcLogoContainer {
+      left: 30%; /* Resetăm orice poziționare absolută */
+      text-align: center; /* Centrăm logo-ul */
+      margin: 1rem 0; /* Adăugăm spațiu suplimentar de 1rem în jurul logo-ului */
+    }
+
+    .socials-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Mutăm conținutul mai la stânga */
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      margin-left: 1rem; /* Mutăm containerul mai la stânga */
+    }
+  
+    .socials-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start; /* Asigurăm poziționarea corectă a iconițelor */
+      align-items: center;
+    }
+  
+    .socials-item {
+      margin-right: 1rem;
+    }
+  
+    .socialText {
+      margin-left: 0.5rem;
+      font-size: 1.4rem;
+    }
+}
+
+  
+  
+  
+  
+  

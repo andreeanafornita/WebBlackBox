@@ -1,0 +1,122 @@
+.newform-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 70%; /* Form occupies more of the page, expanded to 70% */
+  padding: 2rem;
+  margin-left: 7.5rem;
+  margin-top: 10rem;
+  margin-bottom: 7rem;
+  position: relative; /* Ensure positioning is relative to the form */
+}
+
+.newform-form {
+  width: 100%;
+  position: relative; /* Ensure the form's content is relatively positioned */
+}
+
+.newform-form label {
+  display: block;
+  margin: 1.5rem 0 0.5rem;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.newform-form input,
+.newform-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-bottom: 4px solid white;
+  background: transparent;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.newform-form textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.newform-checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.newform-checkbox-group input[type="checkbox"] {
+  margin-right: 2rem;
+  transform: scale(1);
+  margin-top: 3rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid white;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.newform-checkbox-group input[type="checkbox"]:checked {
+  background-color: #ae8507;
+}
+
+.newform-checkbox-group label {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* Custom Alert CSS */
+.custom-alert {
+  position: relative; /* Make it relative to the form */
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  border: 2px solid #ae8507;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2.5rem;
+  z-index: 1000;
+  margin-top: 2rem; /* Add space before the alert */
+}
+
+.newform-submit-button {
+  background-color: #ae8507;
+  color: white;
+  padding: 1.2rem 3rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 4rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newform-submit-button:hover {
+  background-color: #8c6b07;
+}
+
+
+@media (max-width: 667px) {
+  .newform-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 70%; /* Form occupies more of the page, expanded to 70% */
+    padding: 2rem;
+    margin-left: 5.5rem;
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+    position: relative; /* Ensure positioning is relative to the form */
+  }
+  .newform-submit-button {
+    margin-bottom:10%;
+  }
+}

@@ -1,0 +1,57 @@
+.socials-container {
+  margin: 2rem auto; /* Center horizontally */
+  padding: 2rem;
+  background-color: transparent !important; /* Force transparent background */
+  border-radius: 0; /* Remove rounded corners */
+  text-align: center; /* Center text */
+  max-width: 500px; /* Max width for container */
+  width: 80%; /* Full width */
+  border: none !important; /* Remove any border */
+  box-shadow: none !important; /* Remove any shadow */
+  }
+  
+  .socials-list {
+    list-style: none; /* Elimină bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Spațiu egal între elemente */
+    align-items: center; /* Centrare pe verticală */
+  }
+  
+  .socials-item {
+    margin: 0.5rem;
+    font-size: 1.5rem; /* Dimensiune font pentru numele rețelelor sociale */
+  }
+  
+  .socials-item a {
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+    color: white; /* Text alb pentru contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease; /* Tranziție lină pentru schimbarea culorii */
+  }
+  
+  .social-icon {
+    font-size: 2.5rem; /* Dimensiune font pentru iconițe */
+    margin-bottom: 0.5rem; /* Spațiu între iconiță și text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Tranziție lină pentru hover și culoare */
+  }
+  
+  .socials-item a:hover .social-icon,
+  .socials-item a:hover {
+    color: #ae8507; /* Schimbă culoarea la gold sand la hover */
+    transform: scale(1.1); /* Mărește iconița la hover */
+  }
+  @media (max-width: 768px) {
+    .socials-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Mutăm conținutul la dreapta */
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      margin-left: 8rem; /* Mutăm întregul container cât mai la dreapta */
+      margin-right: 16rem; /* Adăugăm un mic spațiu față de marginea din dreapta */
+    }
+  }

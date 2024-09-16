@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+  }
+  
+  .custom-overlay {
+    position: sticky;
+    height: 80vh; /* Reduced from 100vh */
+    top: 0;
+    overflow: hidden;
+  }
+  
+  .custom-text {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .custom-text-inner {
+    transform: translateX(50vw);
+    font-size: 2rem; /* Reduced from 2.5rem */
+  }
+  
+  .custom-track {
+    height: 200vh; /* Reduced from 300vh */
+  }
+  
+  .custom-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      255deg,
+      #facb0e,
+      #ae8507 30%,
+      #808080 65%,
+      #fff
+    );
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .custom-shape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    mix-blend-mode: multiply;
+    background: black;
+  }
+  
+  .custom-shape .img {
+    width: 10rem; /* Reduced from 20rem */
+    height: 10rem; /* Reduced from 20rem */
+    transform: rotate(45deg);
+  }
+  
+  .img svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img svg .hsc-img-path {
+    fill: white;
+  }
+  @media (max-width:768px){
+    body {
+        margin: 0;
+      }
+      
+      .custom-overlay {
+        position: sticky;
+        height: 80vh; /* Reduced from 100vh */
+        top: 0;
+        overflow: hidden;
+      }
+      
+      .custom-text {
+        display: flex;
+        height: 100%;
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
+      .custom-text-inner {
+        transform: translateX(50vw);
+        font-size: 1.5rem; /* Reduced from 2.5rem */
+
+      }
+      
+      .custom-track {
+        height: 200vh; /* Reduced from 300vh */
+      }
+      
+      .custom-gradient {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          255deg,
+          #facb0e,
+          #ae8507 30%,
+          #808080 65%,
+          #fff
+        );
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
+      .custom-shape {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        mix-blend-mode: multiply;
+        background: black;
+      }
+      
+      .custom-shape .img {
+        width: 10rem; /* Reduced from 20rem */
+        height: 10rem; /* Reduced from 20rem */
+        transform: rotate(45deg);
+      }
+      
+      .img svg {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .img svg .hsc-img-path {
+        fill: white;
+      }
+  }

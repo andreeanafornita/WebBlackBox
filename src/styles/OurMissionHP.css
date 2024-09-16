@@ -1,0 +1,155 @@
+.our-mission-hp-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      margin-top: 2rem;
+      position: relative; /* Permite poziționarea absolută a liniei */
+    }
+
+    .our-mission-hp-line {
+      position: absolute;
+      height: 100%; /* Linia să ocupe toată înălțimea containerului */
+      width: 2px; /* Grosimea liniei */
+      background-color: #ae8507; /* Culoarea galbenă a liniei */
+      left: 48%; /* Mută linia ușor spre stânga pentru a crea mai mult spațiu textului */
+      transform: translateX(-50%); /* Asigură poziționarea corectă */
+      z-index: 1; /* Asigură că linia apare deasupra altor elemente */
+    }
+    
+    .our-mission-hp-left, .our-mission-hp-right {
+      width: 48%; /* Redu lățimea containerelor pentru a lăsa mai mult spațiu liniei */
+      z-index: 2; /* Asigură că textul apare deasupra liniei */
+    }
+    
+    .sticky-container {
+      position: sticky;
+      top: 20px; /* Fixează la 20px sub top */
+    }
+    
+    .our-mission-hp-left h2 {
+      font-size: 6rem; /* De 4 ori mai mare decât valoarea inițială */
+      color: #fff; /* Text alb pentru titlu */
+      margin-bottom: 1rem;
+    }
+    
+    .subtext {
+      font-size: 6rem;
+      color: #ae8507;
+      font-weight: 900;
+    }
+    
+    .inline-text {
+      display: block;
+      margin-bottom: 20rem;
+      margin-right:1.6rem;
+    }
+    
+    .highlighted-text {
+      display: inline;
+      color: inherit;
+      font-size: 4rem; /* Setăm span-ul la 4rem */
+    }
+    
+    .normal-text {
+      display: inline;
+      margin-left: 0.5rem;
+      font-size: 4rem; /* Setăm textul normal la 4rem */
+      line-height: inherit;
+      color: inherit;
+    }
+    
+    .our-mission-hp-right p {
+      font-size: 3rem; /* Ajustăm dimensiunea textului la 4rem */
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 3rem;
+      color: #fff;
+
+    }
+    @media (max-width: 1024px){
+      .our-mission-hp-right p {
+        font-size: 2rem; 
+      }
+      .inline-text {
+        margin-bottom: 5rem;
+      }
+    }
+        
+    @media (max-width: 667px) {
+      .our-mission-hp-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2rem;
+        margin-top: 2rem;
+        position: relative; /* Permite poziționarea absolută a liniei */
+      }
+      
+      .our-mission-hp-line {
+        position: absolute;
+        height: 100%; /* Linia să ocupe toată înălțimea containerului */
+        width: 2px; /* Grosimea liniei */
+        background-color: #ae8507; /* Culoarea galbenă a liniei */
+        left: 48%; /* Mută linia ușor spre stânga pentru a crea mai mult spațiu textului */
+        transform: translateX(-50%); /* Asigură poziționarea corectă */
+        z-index: 1; /* Asigură că linia apare deasupra altor elemente */
+      }
+      
+      .our-mission-hp-left, .our-mission-hp-right {
+        width: 48%; /* Redu lățimea containerelor pentru a lăsa mai mult spațiu liniei */
+        z-index: 2; /* Asigură că textul apare deasupra liniei */
+      }
+      
+      .sticky-container {
+        position: sticky;
+        top: 20px; /* Fixează la 20px sub top */
+      }
+      
+      .our-mission-hp-left h2 {
+        font-size: 3rem; /* De 4 ori mai mare decât valoarea inițială */
+        color: #fff; /* Text alb pentru titlu */
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+      }
+      
+      .subtext {
+        font-size: 2.9rem;
+        color: #ae8507;
+        font-weight: 900;
+        margin-right: 2rem;
+        
+      }
+      
+      .inline-text {
+        display: block;
+        margin-bottom: 6rem;
+      }
+      
+      .highlighted-text {
+        display: inline;
+        color: inherit;
+        font-size: 2rem; /* Setăm span-ul la 4rem */
+        margin-right: 2rem;
+        
+      }
+      
+      .normal-text {
+        display: inline;
+        font-size: 3rem; /* Setăm textul normal la 4rem */
+        line-height: inherit;
+        color: inherit;
+        text-align: left; /* Ensure the text is aligned consistently */
+      }
+
+
+      
+      .our-mission-hp-right p {
+        font-size: 1.5rem; /* Ajustăm dimensiunea textului la 4rem */
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 3rem;
+        color: #fff;
+  
+      }
+    }
