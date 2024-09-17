@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/HomePage.css';
-import RotatingNetworkCube from '../components/RotatingNetworkSphere';
+import RotatingNetworkSphere from '../components/RotatingNetworkSphere';
 import InteractiveGoldenButton from '../components/InteractiveGoldenButton';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -239,7 +239,7 @@ export default function HomePage() {
           </h1>
         </div>
 
-        <RotatingNetworkCube className="rotating-sphere" />
+        <RotatingNetworkSphere className="rotating-sphere" />
       </div>
       <h3 className="headingwhyDWS animated-title">
         {t('homePage.whyDWSHeading')}

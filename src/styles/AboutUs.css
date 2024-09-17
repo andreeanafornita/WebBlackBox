@@ -7,24 +7,11 @@
   padding: 0 20px;
   background-color: #000; /* Black background */
   color: #ffffff; /* White text on black background */
-  cursor: none; /* Hide default cursor */
   position: relative; /* Make sure custom cursor stays within the bounds */
   overflow: hidden; /* Prevent overflow to keep cursor effects neat */
 }
 
-/* Custom flame cursor styling */
-.cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 69, 0, 0.8); /* Flame-like color with transparency */
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10000; /* Ensure cursor is on top of all components */
-  box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5); /* Flame aura effect */
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, box-shadow 0.15s ease-out; /* Faster transition for smoother following */
-}
+
 
 /* Fade-in animation for elements */
 .fade-in {
@@ -224,7 +211,6 @@ to {
   padding: 0 20px;
   background-color: #000; /* Black background */
   color: #ffffff; /* White text on black background */
-  cursor: none; /* Hide default cursor */
   position: relative; /* Make sure custom cursor stays within the bounds */
   overflow: hidden; /* Prevent overflow to keep cursor effects neat */
   margin-left: 2rem;

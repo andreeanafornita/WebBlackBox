@@ -77,11 +77,17 @@ textarea {
   font-family: 'Source Code Pro', monospace; /* Apply same font to input and textarea */
 }
 @media (max-width: 768px) {
-  body {
-      overflow-x: hidden;
-  }
-}
+   html, body {
+    overflow-x: hidden; /* Previne scroll-ul pe axa X */
+ }
 
+  img, video {
+    max-width: 100%;
+    height: auto;
+  } 
+  
+
+}
 
 
 
