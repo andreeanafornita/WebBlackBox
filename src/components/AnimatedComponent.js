@@ -1,8 +1,11 @@
+
 // import React, { useRef, useEffect } from 'react';
 // import { gsap } from 'gsap';
+// import { useTranslation } from 'react-i18next'; // Import useTranslation
 // import '../styles/AnimatedComponent.css'; // Import the CSS file
 
 // const CustomAnimation = () => {
+//   const { t } = useTranslation(); // Initialize the translation hook
 //   const textRef = useRef(null);
 //   const rotateRef = useRef(null);
 
@@ -48,7 +51,7 @@
 //       <div className='custom-overlay'>
 //         <div className='custom-text'>
 //           <div className='custom-text-inner' ref={textRef}>
-//             WHERE DIFFERENT IS THE STANDARD. CHOOSE US.
+//             {t('customPage.chooseUs')} {/* Translated text */}
 //           </div>
 //         </div>
 //         <div className='custom-shape'>
@@ -89,6 +92,9 @@ const CustomAnimation = () => {
   const textRef = useRef(null);
   const rotateRef = useRef(null);
 
+  // Funcție pentru detectarea dimensiunilor de ecran
+  const isMobile = () => window.innerWidth <= 768;
+
   useEffect(() => {
     const text = textRef.current;
     const rotate = rotateRef.current;
@@ -97,34 +103,46 @@ const CustomAnimation = () => {
 
     tl
       .to(rotate, {
-        duration: 1,
-        scale: 20, // Reduced scale factor from 30 to 20
+        duration: isMobile() ? 0.8 : 1, // Animație mai rapidă pe mobil
+        scale: isMobile() ? 10 : 20, // Scală mai mică pe mobil
         rotate: 240,
         ease: "expo.in",
       })
       .to(
         text,
         {
-          duration: 1,
+          duration: isMobile() ? 0.8 : 1, // Mai rapid și pentru text
           x: 0,
           ease: "power2.in",
         },
         0
       );
 
+    // Folosim requestAnimationFrame pentru o derulare mai eficientă
     const handleScroll = () => {
       const progress =
-        window.pageYOffset /
-        (document.body.offsetHeight - window.innerHeight);
-      tl.progress(progress);
+        window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      requestAnimationFrame(() => {
+        tl.progress(progress);
+      });
     };
 
+    // Adăugăm ascultătorul de evenimente pentru scroll
     window.addEventListener("scroll", handleScroll, false);
 
     return () => {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
+
+  // Funcție pentru gradient personalizat pe mobil
+  const customGradient = () => {
+    if (!isMobile()) {
+      return 'linear-gradient(90deg, #ffeeca 0%, #d9bd89 100%)';
+    } else {
+      return '#d9bd89'; // Gradient simplificat pe mobil
+    }
+  };
 
   return (
     <div className='custom-track'>
@@ -141,6 +159,7 @@ const CustomAnimation = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 162 162"
+                  preserveAspectRatio="xMidYMid meet" // Păstrează aspectul corect
                   style={{ enableBackground: "new 0 0 162 162" }}
                   xmlSpace="preserve"
                 >
@@ -155,7 +174,7 @@ const CustomAnimation = () => {
             </div>
           </div>
         </div>
-        <div className='custom-gradient'></div>
+        <div className='custom-gradient' style={{ background: customGradient() }}></div>
       </div>
     </div>
   );
