@@ -104,7 +104,7 @@ const CustomAnimation = () => {
     tl
       .to(rotate, {
         duration: isMobile() ? 0.8 : 1, // Animație mai rapidă pe mobil
-        scale: isMobile() ? 10 : 20, // Scală mai mică pe mobil
+        scale: isMobile() ? 20 : 20, // Scală mai mică pe mobil
         rotate: 240,
         ease: "expo.in",
       })

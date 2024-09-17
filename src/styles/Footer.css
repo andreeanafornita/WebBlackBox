@@ -405,6 +405,9 @@
         margin-left: 0.5rem;
         font-size: 1.4rem;
       }
+      .footer{
+        overflow-x: hidden;
+      }
 }
 @media (max-width: 935px) {
     .mainContentContainer {

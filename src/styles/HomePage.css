@@ -703,6 +703,11 @@ body {
   .owtsSection-arrow {
     display: none; /* Ascunde săgețile pe dispozitive mici */
   }
+  .hero-div{
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 
@@ -1186,3 +1191,4 @@ body {
       
 
     }
+  
