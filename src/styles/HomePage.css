@@ -681,7 +681,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-div{
-    left:30rem;
+    left:20rem;
   }
   .interactive-golden-button{
     top:5rem!important;
