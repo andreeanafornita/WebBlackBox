@@ -80,7 +80,20 @@ textarea {
   max-width: 100%;
   box-sizing: border-box;
 }
-
+.hero-div{
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+.ourServicesHP-section{
+  overflow-x: hidden;
+}
+.home-page-container{
+  overflow-x: hidden;
+}
+.owtsSection-cards-container{
+  overflow-x: hidden;
+}
 
 
 
