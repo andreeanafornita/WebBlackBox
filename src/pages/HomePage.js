@@ -38,7 +38,11 @@ export default function HomePage() {
   const headlineRef = useRef(null);
   const owtsRef = useRef(null);
   const [isOwtsVisible, setIsOwtsVisible] = useState(false);
-
+  useEffect(() => {
+    setTimeout(() => {
+      ScrollTrigger.refresh();  // Recalculează dimensiunile pentru animații
+    }, 500);  // Delay mic pentru a permite încărcarea completă
+  }, []);
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
