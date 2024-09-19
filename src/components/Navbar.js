@@ -274,6 +274,8 @@ const styles = {
         display: 'flex',
         padding: '1rem 2rem',
         flexDirection: 'column',
+        minWidth: '300px',  // Ensure a minimum width for the navbar dropdown
+        width: 'auto', 
     },
     dropdownItem: {
         padding: '1rem 1.5rem',
