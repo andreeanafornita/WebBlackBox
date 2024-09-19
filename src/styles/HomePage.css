@@ -585,7 +585,7 @@ body {
 
 /* OWTS Section */
 .owtsSection {
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  background: #000000;
   min-height: 70vh; /* Permite secțiunii să crească în înălțime */
   width: 100vw;
   position: relative;
@@ -595,7 +595,7 @@ body {
 }
 
 .owtsSection-headline {
-  font-size: 2rem;
+  font-size: 8rem;
   color: #ae8507; /* Culoare aurie */
   text-align: center;
   margin-bottom: 2rem;
@@ -603,11 +603,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  /* Elimină poziționarea absolută */
-  /* position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%); */
   margin-top: -6px;
 }
 
@@ -618,11 +613,6 @@ body {
   width: 100%;
   gap: 4rem; /* Spațiu între carduri și săgeți */
   margin-top: 100px;
-  /* Elimină poziționarea absolută */
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   max-width: 100%;
   overflow-y: hidden;
 }
@@ -638,6 +628,27 @@ body {
   text-align: center;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.owtsSection-card-description{
+  font-size: 1.6rem;
+  color: white;
+  text-align: left; /* Aliniere la stânga */
+  margin-left: 0; /* Asigură-te că nu există indentație */
+  margin-right: 0; /* Asigură-te că nu există spațiu suplimentar */
+  max-width: 100%; /* Evită scurtarea textului pe lățimi mai mici */
+  line-height: 1.5; /* Spațiere între rânduri pentru lizibilitate */
+  justify-content:center;
+}
+.owtsSection-card-icon{
+  font-size:6rem;
+  color:#ae8507
+}
+.owtsSection-card-title{
+  font-size:3rem;
+  color:#ae8507;
+  text-align: center; /* Aliniere la stânga */
+  margin-bottom: 2rem; /* Distanță uniformă între titlu și paragraf */
 }
 
 .owtsSection-card:hover {
