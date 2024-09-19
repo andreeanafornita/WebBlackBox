@@ -82,7 +82,7 @@ to {
     padding: 40px;
     border-radius: 15px;
     text-align: center;
-    width: 280px;
+    width: 380px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
