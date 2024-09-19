@@ -44,50 +44,60 @@ export default function HomePage() {
     }, 500);  // Delay mic pentru a permite încărcarea completă
   }, []);
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: macbookRef.current,
-        start: 'top bottom',
-        end: 'top center',
-        scrub: 1.5,
-        toggleActions: 'play none none none',
-      },
-    });
+    const isMobile = window.innerWidth <= 768;
 
-    tl.fromTo(
-      macbookRef.current,
-      { x: '-100%', opacity: 0 },
-      { x: '0%', opacity: 1, duration: 4, ease: 'power1.out' }
-    )
-      .fromTo(
-        imacRef.current,
-        { x: '-100%', opacity: 0 },
-        { x: '0%', opacity: 1, duration: 4, ease: 'power1.out' },
-        '-=2'
-      )
-      .fromTo(
-        phoneRef.current,
-        { y: '100%', opacity: 0 },
-        { y: '0%', opacity: 1, duration: 4, ease: 'power1.out' },
-        '-=2'
-      );
-
-    gsap.fromTo(
-      textRef.current,
-      { x: '100%', opacity: 0 },
-      {
-        x: '0%',
-        opacity: 1,
-        ease: 'power1.out',
+    // Funcție pentru a verifica dacă un element există și are metoda getBoundingClientRect
+    const isValidElement = (element) => element && element.current && typeof element.current.getBoundingClientRect === 'function';
+  
+    if (isValidElement(macbookRef) && isValidElement(imacRef) && isValidElement(phoneRef) && isValidElement(textRef)) {
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: macbookRef.current,
-          start: 'top bottom',
+          start: 'top bottom-=100px',
           end: 'top center',
-          scrub: 1.5,
-          toggleActions: 'play none none none',
+          scrub: isMobile ? 0.3 : 0.5,
+          toggleActions: 'play none none reverse',
         },
-      }
-    );
+      });
+  
+      const duration = isMobile ? 0.5 : 1;
+  
+      tl.fromTo(
+        macbookRef.current,
+        { x: '-100%', opacity: 0 },
+        { x: '0%', opacity: 1, duration: duration, ease: 'power2.out' }
+      )
+        .fromTo(
+          imacRef.current,
+          { x: '-100%', opacity: 0 },
+          { x: '0%', opacity: 1, duration: duration, ease: 'power2.out' },
+          '-=0.3'
+        )
+        .fromTo(
+          phoneRef.current,
+          { y: '100%', opacity: 0 },
+          { y: '0%', opacity: 1, duration: duration, ease: 'power2.out' },
+          '-=0.3'
+        );
+  
+      gsap.fromTo(
+        textRef.current,
+        { x: isMobile ? '0%' : '100%', opacity: 0 },
+        {
+          x: '0%',
+          opacity: 1,
+          duration: duration,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: isMobile ? textRef.current : macbookRef.current,
+            start: 'top bottom-=50px',
+            end: 'top center',
+            scrub: isMobile ? 0.2 : 0.5,
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    }
 
     const textTl = gsap.timeline();
     textTl
