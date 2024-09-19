@@ -1,22 +1,81 @@
+// WebDevelopment.js
+
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faPencilRuler, faCode, faServer, faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faPencilRuler,
+  faCode,
+  faServer,
+  faCheck,
+  faArrowRight,
+  faAngleLeft,
+  faAngleRight,
+} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { Slide } from 'react-awesome-reveal';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { useTranslation } from 'react-i18next';
 
+// Import all images for each category
+import clinicaeng1 from '../assets/clinica/clinicaeng1.png';
 import clinicaeng2 from '../assets/clinica/clinicaeng2.png';
+import clinicaeng3 from '../assets/clinica/clinicaeng3.png';
+import clinicaeng4 from '../assets/clinica/clinicaeng4.png';
+import clinicaeng5 from '../assets/clinica/clinicaeng5.png';
+
+import coaforeng1 from '../assets/salon/coaforeng1.png';
+import coaforeng2 from '../assets/salon/coaforeng2.png';
+import coaforeng3 from '../assets/salon/coaforeng3.png';
+import coaforeng4 from '../assets/salon/coaforeng4.png';
+import coaforeng5 from '../assets/salon/coaforeng5.png';
+import coaforeng6 from '../assets/salon/coaforeng6.png';
 import coaforeng7 from '../assets/salon/coaforeng7.png';
+import coaforeng8 from '../assets/salon/coaforeng8.png';
+
+import hoteleng1 from '../assets/hotel/hoteleng1.png';
+import hoteleng2 from '../assets/hotel/hoteleng2.png';
 import hoteleng3 from '../assets/hotel/hoteleng3.png';
+import hoteleng4 from '../assets/hotel/hoteleng4.png';
+import hoteleng5 from '../assets/hotel/hoteleng5.png';
+import hoteleng6 from '../assets/hotel/hoteleng6.png';
+import hoteleng7 from '../assets/hotel/hoteleng7.png';
+import hoteleng8 from '../assets/hotel/hoteleng8.png';
 
 export default function WebDevelopment() {
   const navigate = useNavigate();
-  const { t } = useTranslation(); // Initialize the translation hook
+  const { t } = useTranslation();
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [modalImages, setModalImages] = useState([]);
+  const [modalImage, setModalImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  // Create a categories object
+  const categories = {
+    clinica: [clinicaeng1, clinicaeng2, clinicaeng3, clinicaeng4, clinicaeng5],
+    coafor: [
+      coaforeng1,
+      coaforeng2,
+      coaforeng3,
+      coaforeng4,
+      coaforeng5,
+      coaforeng6,
+      coaforeng7,
+      coaforeng8,
+    ],
+    hotel: [
+      hoteleng1,
+      hoteleng2,
+      hoteleng3,
+      hoteleng4,
+      hoteleng5,
+      hoteleng6,
+      hoteleng7,
+      hoteleng8,
+    ],
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,7 +112,7 @@ export default function WebDevelopment() {
       marginBottom: '1rem',
     },
     headerSubtitle: {
-      fontSize: isSmallScreen?'1.5rem':'2rem',
+      fontSize: isSmallScreen ? '1.5rem' : '2rem',
       marginBottom: '5rem',
     },
     ctaButton: {
@@ -62,7 +121,7 @@ export default function WebDevelopment() {
       padding: '1rem 2rem',
       border: 'none',
       borderRadius: '5px',
-      fontSize: isSmallScreen?'1.5rem':'2rem',
+      fontSize: isSmallScreen ? '1.5rem' : '2rem',
       cursor: 'pointer',
       marginBottom: '5rem',
     },
@@ -82,19 +141,82 @@ export default function WebDevelopment() {
     },
     portfolioGrid: {
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: isSmallScreen ? 'flex-start' : 'center',
       gap: '1rem',
       marginBottom: '1rem',
       width: '100%',
+      flexWrap: isSmallScreen ? 'nowrap' : 'nowrap',
     },
     portfolioImage: {
-      width: '250px',
+      minWidth: '250px',
       height: '150px',
       objectFit: 'cover',
       cursor: 'pointer',
     },
     portfolioLink: {
       color: '#ae8507',
+      cursor: 'pointer',
+    },
+    modalOverlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.95)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 1000,
+      padding: '1rem',
+    },
+    modalContent: {
+      position: 'relative',
+      width: '100%',
+      maxWidth: '800px',
+      maxHeight: '90%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    modalImage: {
+      width: '100%',
+      height: 'auto',
+      maxHeight: '70vh',
+      objectFit: 'contain',
+    },
+    closeButton: {
+      position: 'absolute',
+      top: '10px',
+      right: '-30px',
+      background: 'transparent',
+      border: 'none',
+      color: '#ae8507',
+      fontSize: '3rem',
+      cursor: 'pointer',
+    },
+    arrow: {
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      fontSize: '5rem',
+      color: '#ae8507',
+      cursor: 'pointer',
+      zIndex: 1001,
+    },
+    gallery: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '1rem',
+      gap: '0.5rem',
+      overflowY: 'auto',
+      maxHeight: '100px',
+    },
+    galleryImage: {
+      width: '80px',
+      height: '60px',
+      objectFit: 'cover',
       cursor: 'pointer',
     },
     processSection: {
@@ -149,6 +271,7 @@ export default function WebDevelopment() {
       justifyContent: 'space-around',
       alignItems: 'center',
       marginTop: '3rem',
+      flexDirection: isSmallScreen ? 'column' : 'row',
     },
     testimonial: {
       textAlign: 'center',
@@ -159,7 +282,16 @@ export default function WebDevelopment() {
       color: '#fff',
       maxWidth: '300px',
       fontSize: isSmallScreen ? '1.5rem' : '2rem',
-
+    },
+    clientName: {
+      fontWeight: 'bold',
+      marginTop: '0.5rem',
+      fontSize: '1.5rem',
+    },
+    testimonialText: {
+      fontStyle: 'italic',
+      marginBottom: '1rem',
+      fontSize: '1.5rem',
     },
     faqSection: {
       padding: '3rem 0',
@@ -182,26 +314,43 @@ export default function WebDevelopment() {
 
   const handleNavigateToPortfolio = () => {
     navigate('/portfolio');
-    
   };
 
   const handleNavigateToContact = () => {
     navigate('/contact');
-    
   };
 
-  const openImageModal = (image) => {
-    setSelectedImage(image);
+  // Modify the openImageModal function
+  const openImageModal = (category, index) => {
+    setModalImages(categories[category]);
+    setModalImage(categories[category][index]);
+    setSelectedImageIndex(index);
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
     document.body.style.overflowX = 'hidden';
   };
 
+  // Update the closeModal function
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedImage(null);
+    setModalImage(null);
+    setSelectedImageIndex(0);
     document.body.style.overflow = 'auto';
     document.body.style.overflowX = 'hidden';
+  };
+
+  // Navigation functions
+  const handleNext = () => {
+    const nextIndex = (selectedImageIndex + 1) % modalImages.length;
+    setSelectedImageIndex(nextIndex);
+    setModalImage(modalImages[nextIndex]);
+  };
+
+  const handlePrev = () => {
+    const prevIndex =
+      (selectedImageIndex - 1 + modalImages.length) % modalImages.length;
+    setSelectedImageIndex(prevIndex);
+    setModalImage(modalImages[prevIndex]);
   };
 
   const { ref: headerRef, inView: headerInView } = useInView({ triggerOnce: true });
@@ -246,29 +395,75 @@ export default function WebDevelopment() {
         <div
           style={{
             ...styles.portfolioGrid,
-            display: isSmallScreen ? 'flex' : 'flex',
-            overflowX: isSmallScreen ? 'scroll' : 'hidden',
-            whiteSpace: isSmallScreen ? 'nowrap' : 'normal',
+            overflowX: isSmallScreen ? 'auto' : 'hidden',
           }}
         >
-          <img src={hoteleng3} alt="Web Development Project 1" style={styles.portfolioImage} onClick={() => openImageModal(hoteleng3)} />
-          <img src={clinicaeng2} alt="Web Development Project 2" style={styles.portfolioImage} onClick={() => openImageModal(clinicaeng2)} />
-          <img src={coaforeng7} alt="Web Development Project 3" style={styles.portfolioImage} onClick={() => openImageModal(coaforeng7)} />
+          {/* Adjust the onClick handlers */}
+          <img
+            src={clinicaeng2}
+            alt="Web Development Project 1"
+            style={styles.portfolioImage}
+            onClick={() => openImageModal('clinica', 1)} // index 1 for clinicaeng2
+          />
+          <img
+            src={coaforeng7}
+            alt="Web Development Project 2"
+            style={styles.portfolioImage}
+            onClick={() => openImageModal('coafor', 6)} // index 6 for coaforeng7
+          />
+          <img
+            src={hoteleng3}
+            alt="Web Development Project 3"
+            style={styles.portfolioImage}
+            onClick={() => openImageModal('hotel', 2)} // index 2 for hoteleng3
+          />
         </div>
-        <p style={styles.portfolioLink} onClick={handleNavigateToPortfolio}>{t("webDevPage.viewAllProjects")}</p>
+        <p style={styles.portfolioLink} onClick={handleNavigateToPortfolio}>
+          {t("webDevPage.viewAllProjects")}
+        </p>
       </section>
 
+      {/* Update the modal rendering */}
       {isModalOpen && (
         <div style={styles.modalOverlay} onClick={closeModal}>
           <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <img src={selectedImage} alt="Enlarged View" style={styles.modalImage} />
             <button style={styles.closeButton} onClick={closeModal}>
               &times;
             </button>
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              onClick={handlePrev}
+              style={{ ...styles.arrow, left: '10px' }}
+            />
+            <img src={modalImage} alt="Enlarged View" style={styles.modalImage} />
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              onClick={handleNext}
+              style={{ ...styles.arrow, right: '10px' }}
+            />
+            <div style={styles.gallery}>
+              {modalImages.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  style={{
+                    ...styles.galleryImage,
+                    border:
+                      selectedImageIndex === index ? '2px solid #ae8507' : 'none',
+                  }}
+                  onClick={() => {
+                    setSelectedImageIndex(index);
+                    setModalImage(image);
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}
 
+      {/* Process Section */}
       <section
         ref={processRef}
         style={{
@@ -307,6 +502,7 @@ export default function WebDevelopment() {
         </div>
       </section>
 
+      {/* Benefits Section */}
       <section
         ref={benefitsRef}
         style={{
@@ -336,6 +532,7 @@ export default function WebDevelopment() {
         </ul>
       </section>
 
+      {/* Testimonials Section */}
       <section
         ref={testimonialsRef}
         style={{
@@ -361,6 +558,7 @@ export default function WebDevelopment() {
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section
         ref={faqRef}
         style={{
@@ -386,6 +584,7 @@ export default function WebDevelopment() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer
         ref={footerRef}
         style={{
