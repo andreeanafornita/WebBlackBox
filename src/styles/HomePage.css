@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   background-color: black;
   margin: 0;
@@ -12,21 +13,21 @@ body {
   background-color: black;
 }
 
+/* Hero Section */
 .hero-div {
   width: 100%;
   justify-content: space-between; /* Align content left and right */
   padding: 0 1%; /* Add padding for spacing */
   position: relative; /* To position header-div absolutely inside */
-  height: 100vh; /* Setează înălțimea secțiunii hero la 100% din înălțimea ferestrei */
+  height: 100vh; /* Set hero section height to 100% of viewport height */
   display: flex;
   align-items: flex-start; /* Align content to the top */
-  /* transform: translateX(-10%); Adjust the translateX to match the new left value */
 }
 
 .header-div {
   align-items: flex-start; /* Align text to the left */
   width: 45%; /* Restrict width to ensure space for the canvas */
-  align-self: flex-start; /* Align text to the left */
+  align-self: flex-start;
   position: absolute; /* Absolute positioning within hero-div */
   left: 40%; /* Center horizontally */
   top: 65%; /* Center vertically */
@@ -44,20 +45,21 @@ body {
   align-self: flex-end; /* Align the sphere to the right */
 }
 
+/* Why DWS Section */
 .whyDWS-section {
   display: flex;
-  height: auto; /* Schimbă înălțimea la auto pentru a se adapta conținutului */
+  height: auto; /* Change height to auto to adapt to content */
   background-color: black;
   color: white;
-  padding: 0; /* Asigură-te că padding-ul nu adaugă spațiu */
-  min-height: 50vh; /* Înlătură dacă secțiunea devine prea mare */
+  padding: 0; /* Ensure padding does not add space */
+  min-height: 50vh; /* Remove if the section becomes too large */
 }
 
 .image-section {
   flex: 1;
   display: flex;
-  justify-content: center; /* Centrează conținutul pe orizontală */
-  align-items: center; /* Centrează conținutul pe verticală */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   position: relative;
   margin-top: 15%;
 }
@@ -72,22 +74,23 @@ body {
   height: auto;
 }
 
+/* Image positions and sizes */
 .image-container:first-child {
-  width: 45%; /* iMac - mărit cu 15% */
+  width: 45%; /* iMac - increased by 15% */
   left: 5%;
-  bottom: 39%; /* Poziția originală */
+  bottom: 39%; /* Original position */
 }
 
 .image-container:nth-child(2) {
-  width: 57.5%; /* MacBook - mărit cu 15% */
-  left: 45%; /* Poziționat la dreapta iMac-ului */
-  bottom: 57%; /* Mutat mai sus pentru a alinia cu iMac-ul */
+  width: 57.5%; /* MacBook - increased by 15% */
+  left: 45%; /* Positioned to the right of iMac */
+  bottom: 57%; /* Moved up to align with iMac */
 }
 
 .image-container:nth-child(3) {
-  width: 15%; /* iPhone - redus cu 50% */
-  left: 40%; /* Mutat în stânga pentru a se poziționa între iMac și MacBook */
-  bottom: 25%; /* Mutat mai sus pentru a fi centrat */
+  width: 15%; /* iPhone - reduced by 50% */
+  left: 40%; /* Positioned between iMac and MacBook */
+  bottom: 25%; /* Moved up to be centered */
   z-index: 2;
 }
 
@@ -99,19 +102,20 @@ body {
   opacity: 0; /* Initially hidden */
   transform: translateX(100%); /* Position off-screen to the right */
   display: flex;
-  flex-direction: column; /* Ensures paragraphs stack on top of each other */
+  flex-direction: column; /* Stack paragraphs vertically */
   justify-content: center;
   align-items: flex-start;
   z-index: 1;
 }
 
 .text-section p {
-  margin-bottom: 1rem; /* Add space between paragraphs */
-  font-size: 3rem; /* Adjust the font size as necessary */
+  margin-bottom: 1rem; /* Space between paragraphs */
+  font-size: 3rem; /* Adjust font size as necessary */
   line-height: 1.5;
 }
+
 .headingwhyDWS {
-  font-size: 4em; /* Ajustează mărimea fontului după preferință */
+  font-size: 4em; /* Adjust font size as needed */
   text-align: center;
   color: #ae8507;
   margin: 0 auto;
@@ -173,6 +177,8 @@ body {
   color: white;
   font-size: 1.5rem;
 }
+
+/* Our Services Section */
 .ourServicesHP-section {
   display: flex;
   flex-direction: column;
@@ -180,14 +186,14 @@ body {
   align-items: center;
   background-color: #000000;
   padding: var(--spacing-xxl) var(--spacing-l);
-  margin-top: 10rem; /* Adaugă un spațiu de 50px între secțiuni */
+  margin-top: 10rem; /* Add space between sections */
 }
 
 .animated-title {
   opacity: 0;
   transform: translateY(50px);
   animation: slideUpFadeIn 1s forwards;
-  animation-delay: 0.5s; /* Poți ajusta delay-ul după preferințe */
+  animation-delay: 0.5s; /* Adjust delay as needed */
 }
 
 @keyframes slideUpFadeIn {
@@ -199,12 +205,9 @@ body {
 
 .services-card-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  ); /* Ajustează dimensiunea minimă a cardurilor */
-  grid-gap: 20px; /* Distanță între carduri */
-  max-width: 200rem; /* Lățime maximă a grilei */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minimum card size */
+  grid-gap: 20px; /* Space between cards */
+  max-width: 200rem; /* Maximum grid width */
   width: 100%;
   margin: 0 auto;
 }
@@ -215,71 +218,71 @@ body {
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Umbră pentru carduri */
-  transition: transform 0.3s ease-in-out; /* Animație pe hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Card shadow */
+  transition: transform 0.3s ease-in-out; /* Hover animation */
   max-width: 100%;
-  height: 100rem; /* Înălțimea cardurilor */
+  height: 100rem; /* Card height */
 }
 
 .services-card:hover {
-  transform: scale(1.05); /* Mărire ușoară la hover */
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .services-card__background {
   background-size: cover;
   background-position: center;
-  border-radius: inherit; /* Menține colțurile rotunjite */
-  bottom: 0;
-  filter: brightness(0.75) saturate(1.2) contrast(0.85);
-  left: 0;
+  border-radius: inherit; /* Maintain rounded corners */
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
   transform-origin: center;
   transform: scale(1);
   transition: filter 200ms linear, transform 200ms linear;
 }
 
 .services-card:hover .services-card__background {
-  transform: scale(1.05); /* Efect de zoom la hover */
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 
-.services-card-grid:hover
-  > .services-card:not(:hover)
-  .services-card__background {
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px); /* Blur pe celelalte carduri */
+.services-card-grid:hover > .services-card:not(:hover) .services-card__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px); /* Blur other cards */
   transition: filter 200ms linear;
 }
 
 .services-card__content {
   position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
   padding: 15px;
   color: white;
   z-index: 10;
-  display: flex; /* Flexbox pentru centrare */
-  flex-direction: column; /* Aranjare pe verticală */
-  align-items: center; /* Centrează textul pe orizontală */
-  justify-content: center; /* Centrează textul pe verticală */
-  text-align: center; /* Asigură-te că textul este centrat */
-  top: 0; /* Umple întreaga zonă a cardului */
-  right: 0;
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Vertical arrangement */
+  align-items: center; /* Center text horizontally */
+  justify-content: center; /* Center text vertically */
+  text-align: center; /* Center text */
 }
 
 .services-card__category {
-  color: rgba(255, 255, 255, 0.9); /* Culoare alb translucid pentru categorie */
-  font-size: 1.2rem; /* Dimensiune mai mare pentru categoria cardului */
+  color: rgba(255, 255, 255, 0.9); /* Translucent white */
+  font-size: 1.2rem; /* Larger category font */
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
 
 .services-card__heading {
-  color: rgba(255, 255, 255, 1); /* Culoare alb intens pentru titlu */
-  font-size: 2rem; /* Mărirea fontului titlului */
+  color: rgba(255, 255, 255, 1); /* Bright white */
+  font-size: 2rem; /* Larger heading font */
   line-height: 1.4;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Umbră ușoară pentru text */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Text shadow */
 }
+
+/* Our Mission Section */
 .ourMissionHP-section {
   padding: 100px 0;
   background-color: #000;
@@ -294,7 +297,7 @@ body {
   opacity: 1;
 }
 
-/* Glitch effect layers */
+/* Glitch Effect */
 .ourMissionHP-heading::before,
 .ourMissionHP-heading::after {
   content: attr(data-text);
@@ -321,21 +324,20 @@ body {
   animation: glitch2 2s infinite ease-in-out;
 }
 
-/* Animații glitch */
 @keyframes glitch1 {
   0% {
     opacity: 0;
   }
   20% {
     opacity: 1;
-    transform: translate(-1px, -1px) scale(1.01); /* Am redus valorile translate și scale */
+    transform: translate(-1px, -1px) scale(1.01);
   }
   40% {
     opacity: 0;
   }
   60% {
     opacity: 1;
-    transform: translate(1px, 1px) scale(1.01); /* Am redus valorile translate și scale */
+    transform: translate(1px, 1px) scale(1.01);
   }
   80% {
     opacity: 0;
@@ -351,14 +353,14 @@ body {
   }
   10% {
     opacity: 1;
-    transform: translate(1px, 1px) scale(1.01); /* Am redus valorile translate și scale */
+    transform: translate(1px, 1px) scale(1.01);
   }
   30% {
     opacity: 0;
   }
   50% {
     opacity: 1;
-    transform: translate(-1px, -1px) scale(1.01); /* Am redus valorile translate și scale */
+    transform: translate(-1px, -1px) scale(1.01);
   }
   70% {
     opacity: 0;
@@ -368,76 +370,7 @@ body {
   }
 }
 
-/* Restul stilurilor tale */
-
-@media (max-width: 2000px) {
-  /* Stilurile tale CSS */
-  .heading {
-    font-size: 8rem;
-  }
-
-  .headingwhyDWS {
-    font-size: 4em; /* Ajustează dimensiunea după preferințe */
-    text-align: center; /* Centrează textul orizontal */
-    margin: 0 auto; /* Asigură centrare */
-    padding-top: 20px; /* Ajustează spațiul de sus */
-    position: relative;
-    top: -8rem; /* Mută textul mai sus */
-  }
-
-  .text-section {
-    padding: 1.5rem;
-  }
-  .text-section p {
-    margin-bottom: 1rem; /* Add space between paragraphs */
-    font-size: 3rem; /* Adjust the font size as necessary */
-    line-height: 1.5;
-    hyphens: auto;
-  }
-}
-@media (max-width: 1024px) {
-  /* IPAd */
-  /* Stilurile tale CSS */
-  .heading {
-    font-size: 8rem;
-  }
-  .text-section {
-    padding: 1.5rem;
-  }
-  .text-section p {
-    margin-bottom: 1rem; /* Add space between paragraphs */
-    font-size: 1.5rem; /* Adjust the font size as necessary */
-    line-height: 1.5;
-  }
-
-  .headingwhyDWS {
-    font-size: 3rem; /* Ajustează dimensiunea după preferințe */
-    text-align: center; /* Centrează textul orizontal */
-    margin: 0 auto; /* Asigură centrare */
-    padding-top: 20px; /* Ajustează spațiul de sus */
-    position: relative;
-    top: 2.4rem; /* Mută textul mai sus */
-  }
-  .image-container:first-child {
-    width: 36%; /* iMac - mărit cu 15% */
-    left: 10%;
-    bottom: 35%; /* Poziția originală */
-  }
-
-  .image-container:nth-child(2) {
-    width: 46.5%; /* MacBook - mărit cu 15% */
-    left: 45%; /* Poziționat la dreapta iMac-ului */
-    bottom: 40%; /* Mutat mai sus pentru a alinia cu iMac-ul */
-  }
-
-  .image-container:nth-child(3) {
-    width: 10%; /* iPhone - redus cu 50% */
-    left: 43%; /* Mutat în stânga pentru a se poziționa între iMac și MacBook */
-    bottom: 30%; /* Mutat mai sus pentru a fi centrat */
-    z-index: 2;
-  }
-}
-
+/* Home Page Container */
 .home-page-container {
   display: flex;
   justify-content: space-between;
@@ -457,146 +390,26 @@ body {
 }
 
 .form-image {
-  width: 100%; /* Face imaginea să ocupe toată lățimea containerului */
-  height: 100%; /* Face imaginea să ocupe toată înălțimea containerului */
-  object-fit: cover; /* Asigură că imaginea își păstrează proporțiile și ocupă tot containerul */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Maintain aspect ratio */
   filter: brightness(20%);
-}
-
-@media (max-width: 667px) {
-  .heading {
-    font-size: 5rem;
-  }
-  .text-section {
-    margin-right: 1rem;
-  }
-  .text-section p {
-    margin-bottom: 1rem; /* Add space between paragraphs */
-    font-size: 2rem; /* Adjust the font size as necessary */
-    line-height: 2.5rem;
-    margin-right: 0.5rem;
-    text-align: center;
-
-    hyphens: auto;
-  }
-  .home-page-container {
-    position: relative;
-    width: 96%;
-    height: 120vh; /* Full viewport height */
-    overflow: hidden;
-    margin-top: 0; /* Reset margin */
-  }
-
-  .left-side {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; /* Full width for form */
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    z-index: 1; /* Ensure the form is above the image */
-  }
-
-  .right-side {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Full screen background */
-    z-index: -1; /* Behind the form */
-  }
-
-  .form-image {
-    display: none;
-  }
-  .image-container:first-child {
-    width: 75% !important; /* iMac - mărit cu 15% */
-    left: 18% !important;
-    bottom: 88% !important; /* Poziția originală */
-  }
-
-  .image-container:nth-child(2) {
-    width: 90% !important; /* MacBook - mărit cu 15% */
-    left: 10% !important; /* Poziționat la dreapta iMac-ului */
-    bottom: 50% !important; /* Mutat mai sus pentru a alinia cu iMac-ul */
-  }
-
-  .image-container:nth-child(3) {
-    width: 45% !important; /* iPhone - redus cu 50% */
-    left: 35% !important; /* Mutat în stânga pentru a se poziționa între iMac și MacBook */
-    bottom: 3% !important; /* Mutat mai sus pentru a fi centrat */
-    z-index: 2;
-  }
-  .header-div {
-    left: 41%;
-    top: 65%;
-  }
-  .services-card {
-    height: 60rem; /* Înălțimea cardurilor */
-  }
-}
-@media (max-width: 1440px) {
-  /* laptop */
-  .headingwhyDWS {
-    /* Elimină sau resetează proprietățile care pot afecta poziționarea */
-    top: 0;
-    transform: translateY(0);
-
-    /* Ajustează margin-bottom pentru a reduce spațiul de sub titlu */
-    margin-bottom: 0rem; /* Poți ajusta valoarea după necesități */
-
-    /* Asigură-te că poziționarea este corectă */
-    position: relative;
-  }
-
-  /* Ajustează margin-top al secțiunii următoare pentru a aduce elementele mai aproape */
-  .ourMissionHP-section {
-    margin-top: 0rem; /* Reduce spațiul de deasupra secțiunii */
-    padding-top: 0rem; /* Ajustează padding-ul dacă este necesar */
-  }
-  .image-container:first-child {
-    width: 45%; /* iMac - mărit cu 15% */
-    left: 5%;
-    bottom: 60%; /* Poziția originală */
-  }
-
-  .image-container:nth-child(2) {
-    width: 55.5%; /* MacBook - mărit cu 15% */
-    left: 45%; /* Poziționat la dreapta iMac-ului */
-    bottom: 75%; /* Mutat mai sus pentru a alinia cu iMac-ul */
-  }
-
-  .image-container:nth-child(3) {
-    width: 15%; /* iPhone - redus cu 50% */
-    left: 40%; /* Mutat în stânga pentru a se poziționa între iMac și MacBook */
-    bottom: 45%; /* Mutat mai sus pentru a fi centrat */
-    z-index: 2;
-  }
-  .text-section {
-    margin-right: 2rem; /* Ajustează valoarea după preferințe */
-    text-align: justify; /* Opțional, pentru a alinia textul la ambele margini */
-  }
-
-  .text-section p {
-    font-size: 2rem;
-  }
 }
 
 /* OWTS Section */
 .owtsSection {
   background: #000000;
-  min-height: 70vh; /* Permite secțiunii să crească în înălțime */
+  min-height: 70vh; /* Allow section to grow */
   width: 100vw;
   position: relative;
-  padding-top: 50px; /* Spațiu pentru headline */
-  padding-bottom: 70px; /* Adaugă padding jos */
+  padding-top: 50px; /* Space for headline */
+  padding-bottom: 70px; /* Bottom padding */
   overflow: hidden;
 }
 
 .owtsSection-headline {
   font-size: 8rem;
-  color: #ae8507; /* Culoare aurie */
+  color: #ae8507; /* Gold color */
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
@@ -611,7 +424,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 4rem; /* Spațiu între carduri și săgeți */
+  gap: 4rem; /* Space between cards and arrows */
   margin-top: 100px;
   max-width: 100%;
   overflow-y: hidden;
@@ -622,33 +435,12 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  padding: 4rem; /* Mărește padding-ul pentru a mări cardurile */
-  width: 60rem; /* Lățimea cardurilor */
-  height: 60rem; /* Mărește înălțimea cardurilor */
+  padding: 4rem; /* Increase padding to enlarge cards */
+  width: 60rem; /* Card width */
+  height: 60rem; /* Card height */
   text-align: center;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.owtsSection-card-description{
-  font-size: 1.6rem;
-  color: white;
-  text-align: left; /* Aliniere la stânga */
-  margin-left: 0; /* Asigură-te că nu există indentație */
-  margin-right: 0; /* Asigură-te că nu există spațiu suplimentar */
-  max-width: 100%; /* Evită scurtarea textului pe lățimi mai mici */
-  line-height: 1.5; /* Spațiere între rânduri pentru lizibilitate */
-  justify-content:center;
-}
-.owtsSection-card-icon{
-  font-size:6rem;
-  color:#ae8507
-}
-.owtsSection-card-title{
-  font-size:3rem;
-  color:#ae8507;
-  text-align: center; /* Aliniere la stânga */
-  margin-bottom: 2rem; /* Distanță uniformă între titlu și paragraf */
 }
 
 .owtsSection-card:hover {
@@ -657,164 +449,34 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Stilizare săgeți */
-.owtsSection-arrow {
-  font-size: 4rem;
+.owtsSection-card-icon {
+  font-size: 6rem;
   color: #ae8507;
 }
 
-/* Animații */
-.owtsSection-card,
+.owtsSection-card-title {
+  font-size: 3rem;
+  color: #ae8507;
+  text-align: center;
+  margin-bottom: 2rem; /* Space between title and description */
+}
+
+.owtsSection-card-description {
+  font-size: 1.6rem;
+  color: white;
+  text-align: left;
+  max-width: 100%;
+  line-height: 1.5; /* Readability */
+  justify-content: center;
+}
+
+/* Arrow Styling */
 .owtsSection-arrow {
-  opacity: 0;
-  transform: translateY(20px);
-  visibility: hidden;
+  font-size: 4rem; /* Increase arrow size */
+  color: #ae8507; /* Gold color */
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-    visibility: hidden;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
-}
-
-/* Animații pentru fiecare element */
-.owtsSection.show .owtsSection-cards-container > *:nth-child(1) {
-  animation: fadeInUp 0.5s ease forwards 0.5s;
-}
-.owtsSection.show .owtsSection-cards-container > *:nth-child(2) {
-  animation: fadeInUp 0.5s ease forwards 1s;
-}
-.owtsSection.show .owtsSection-cards-container > *:nth-child(3) {
-  animation: fadeInUp 0.5s ease forwards 1.5s;
-}
-.owtsSection.show .owtsSection-cards-container > *:nth-child(4) {
-  animation: fadeInUp 0.5s ease forwards 2s;
-}
-.owtsSection.show .owtsSection-cards-container > *:nth-child(5) {
-  animation: fadeInUp 0.5s ease forwards 2.5s;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .owtsSection {
-    /* Elimină înălțimea fixă */
-    min-height: 100vh;
-  }
-
-  .owtsSection-cards-container {
-    gap: 1.5rem;
-  }
-
-  .owtsSection-card {
-    width: 45rem;
-    height: 60rem; /* Păstrează înălțimea mărită */
-    padding: 2.5rem;
-  }
-
-  .owtsSection-card-icon {
-    font-size: 3.5rem;
-  }
-
-  .owtsSection-card-title {
-    font-size: 1.8rem;
-  }
-
-  .owtsSection-card-description {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .owtsSection-headline {
-    display: none;
-    /* Elimină poziționarea absolută */
-    /* position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%); */
-  }
-}
-
-/* Stilizare săgeți */
-.owtsSection-arrow {
-  font-size: 4rem; /* Mărește dimensiunea săgeților */
-  color: #ae8507; /* Culoare aurie */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header-div{
-    left:25rem;
-  }
-  .interactive-golden-button{
-    top:5rem!important;
-  }
-
-  .image-container:first-child {
-    width: 45%; /* iMac - mărit cu 15% */
-    left: 15%!important;
-    bottom: 60%!important; /* Poziția originală */
-  }
-
-  .image-container:nth-child(2) {
-    width: 55.5%; /* MacBook - mărit cu 15% */
-    left: 45%; /* Poziționat la dreapta iMac-ului */
-    bottom: 92%!important; /* Mutat mai sus pentru a alinia cu iMac-ul */
-  }
-
-  .image-container:nth-child(3) {
-    width: 15%; /* iPhone - redus cu 50% */
-    left: 40%; /* Mutat în stânga pentru a se poziționa între iMac și MacBook */
-    bottom: 10%!important; /* Mutat mai sus pentru a fi centrat */
-    z-index: 2;
-  }
-  .home-page-container{
-    margin-bottom:20rem!important;
-  }
-  .owtsSection-cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem; /* Spațiere mai mică pe dispozitive mici */
-    position:relative;
-    left:0rem!important;
-  }
-
-  .owtsSection-card {
-    width: 90%;
-    margin-bottom: 2rem;
-  }
-  .owtsSection-headline{
-    top:-28rem!important;
-  }
-  .owtsSection-arrow {
-    display: none; /* Ascunde săgețile pe dispozitive mici */
-  }
-  .hero-div {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-  }
-  .ourServicesHP-section {
-    overflow-x: hidden;
-  }
-  .home-page-container {
-    overflow-x: hidden;
-  }
-  .owtsSection-cards-container {
-    overflow-x: hidden;
-  }
-  .AnimatedComponentHP{
-    margin-top:25rem;
-  }
-}
-
-/* Ascunde inițial toate elementele */
+/* Animations */
 .owtsSection-card,
 .owtsSection-arrow {
   opacity: 0;
@@ -835,63 +497,142 @@ body {
   }
 }
 
-/* Animații pentru fiecare element când secțiunea devine vizibilă */
+/* Animation Timing */
 .owtsSection.show .owtsSection-cards-container > *:nth-child(1) {
   animation: fadeInUp 0.5s ease forwards 0.5s;
 }
+
 .owtsSection.show .owtsSection-cards-container > *:nth-child(2) {
   animation: fadeInUp 0.5s ease forwards 1s;
 }
+
 .owtsSection.show .owtsSection-cards-container > *:nth-child(3) {
   animation: fadeInUp 0.5s ease forwards 1.5s;
 }
+
 .owtsSection.show .owtsSection-cards-container > *:nth-child(4) {
   animation: fadeInUp 0.5s ease forwards 2s;
 }
+
 .owtsSection.show .owtsSection-cards-container > *:nth-child(5) {
   animation: fadeInUp 0.5s ease forwards 2.5s;
 }
 
-@media (max-width: 1024px) {
+/* Media Queries */
+
+/* Max Width 2000px */
+@media (max-width: 2000px) {
+  .heading {
+    font-size: 8rem;
+  }
+
+  .headingwhyDWS {
+    font-size: 4em;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+    top: -8rem;
+  }
+
+  .text-section {
+    padding: 1.5rem;
+  }
+
+  .text-section p {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    line-height: 1.5;
+    hyphens: auto;
+  }
+}
+
+/* Max Width 1440px */
+@media (max-width: 1440px) {
+  /* Adjust headingwhyDWS positioning */
+  .headingwhyDWS {
+    top: 0;
+    transform: translateY(0);
+    margin-bottom: 0rem;
+    position: relative;
+  }
+
+  /* Adjust ourMissionHP-section spacing */
+  .ourMissionHP-section {
+    margin-top: 0rem;
+    padding-top: 0rem;
+  }
+
+  /* Adjust image-container sizes and positions */
+  .image-container:first-child {
+    width: 45%;
+    left: 5%;
+    bottom: 60%;
+  }
+
+  .image-container:nth-child(2) {
+    width: 55.5%;
+    left: 45%;
+    bottom: 75%;
+  }
+
+  .image-container:nth-child(3) {
+    width: 15%;
+    left: 40%;
+    bottom: 45%;
+    z-index: 2;
+  }
+
+  /* Adjust text-section styles */
+  .text-section {
+    margin-right: 2rem;
+    text-align: justify;
+    margin-bottom: 8rem;
+  }
+
+  .text-section p {
+    font-size: 2rem;
+  }
+
+  /* OWTS Section adjustments */
   .owtsSection {
-    height: 100vh; /* Setează înălțimea la 90% din viewport */
+    height: 100vh;
   }
 
   .owtsSection-cards-container {
-    gap: 1.5rem; /* Spațiere și mai mică pe ecrane mai mici */
+    gap: 1.5rem;
   }
 
   .owtsSection-card {
-    width: 45rem; /* Redu și mai mult dimensiunea cardurilor */
-    height: 50rem; /* Redu și mai mult înălțimea */
-    padding: 2.5rem; /* Ajustează padding-ul */
+    width: 45rem;
+    height: 35rem;
+    padding: 2.5rem;
   }
 
   .owtsSection-card-icon {
-    font-size: 3.5rem; /* Ajustează dimensiunea iconiței */
+    font-size: 3.5rem;
   }
 
   .owtsSection-card-title {
-    font-size: 1.8rem; /* Redu titlurile pentru ecrane și mai mici */
+    font-size: 1.8rem;
   }
 
   .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează fontul descrierilor */
+    font-size: 1.4rem;
     text-align: center;
   }
 
-  /* Adaugă margine doar la primul card */
   .owtsSection-card:first-child {
-    margin-left: 4rem; /* Adaugă margine pe stânga */
+    margin-left: 4rem;
   }
 
-  /* Adaugă margine doar la ultimul card */
   .owtsSection-card:last-child {
-    margin-right: 6rem; /* Adaugă margine pe dreapta */
+    margin-right: 6rem;
   }
+
   .owtsSection-headline {
     font-size: 6rem;
-    color: #ae8507; /* Culoare aurie */
+    color: #ae8507;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 600;
@@ -899,85 +640,208 @@ body {
     letter-spacing: 0.1em;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     position: absolute;
-    top: 0%; /* Headline-ul rămâne sus */
+    top: 0%;
     left: 50%;
     transform: translateX(-50%);
   }
 }
 
-@media (max-width: 768px) {
-  /* OWTS Section */
+/* Max Width 1251px */
+@media (max-width: 1251px) {
   .owtsSection {
-    background: #000000;
-    height: 80vh; /* Înălțimea secțiunii să fie automată */
-    width: 100vw;
+    height: 100vh;
+  }
+
+  .owtsSection-card {
+    width: 45rem;
+    height: 45rem;
+    padding: 2.5rem;
+  }
+
+  .owtsSection-card-description {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+/* Max Width 1100px */
+@media (max-width: 1100px) {
+  .owtsSection-card {
+    width: 45rem;
+    height: 50rem;
+    padding: 2.5rem;
+  }
+
+  .owtsSection-card-description {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+/* Max Width 1024px (iPad) */
+@media (max-width: 1024px) {
+  /* Adjust heading size */
+  .heading {
+    font-size: 8rem;
+  }
+
+  /* Adjust text section */
+  .text-section {
+    padding: 1.5rem;
+  }
+
+  .text-section p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* Adjust headingwhyDWS */
+  .headingwhyDWS {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
     position: relative;
-    padding-top: 5rem; /* Spațiu pentru headline */
-    padding-bottom: 135rem; /* Spațiu jos pentru a evita suprapunerea */
+    top: 2.4rem;
+  }
+
+  /* Adjust image-container sizes and positions */
+  .image-container:first-child {
+    width: 36%;
+    left: 10%;
+    bottom: 35%;
+  }
+
+  .image-container:nth-child(2) {
+    width: 46.5%;
+    left: 45%;
+    bottom: 40%;
+  }
+
+  .image-container:nth-child(3) {
+    width: 10%;
+    left: 43%;
+    bottom: 30%;
+    z-index: 2;
+  }
+
+  /* OWTS Section adjustments */
+  .owtsSection {
+    min-height: 100vh;
+    height: 100vh;
+  }
+
+  .owtsSection-cards-container {
+    gap: 1.5rem;
+  }
+
+  .owtsSection-card {
+    width: 45rem;
+    height: 50rem;
+    padding: 2.5rem;
+  }
+
+  .owtsSection-card-icon {
+    font-size: 3.5rem;
+  }
+
+  .owtsSection-card-title {
+    font-size: 1.8rem;
+  }
+
+  .owtsSection-card-description {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .owtsSection-card:first-child {
+    margin-left: 4rem;
+  }
+
+  .owtsSection-card:last-child {
+    margin-right: 6rem;
   }
 
   .owtsSection-headline {
-    font-size: 3rem; /* Ajustează dimensiunea titlului pentru mobil */
+    display: none;
+  }
+}
+
+/* Max Width 966px */
+@media (max-width: 966px) {
+  /* OWTS Section adjustments */
+  .owtsSection {
+    background: #000000;
+    height: 80vh;
+    width: 100vw;
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 135rem;
+  }
+
+  .owtsSection-headline {
+    font-size: 3rem;
     margin-bottom: 2rem;
-    text-align: center; /* Asigură că titlul este centrat */
+    text-align: center;
     margin-top: 20rem;
   }
 
-  /* Containerul de carduri */
   .owtsSection-cards-container {
-    display: flex;
-    flex-direction: column; /* Afișează cardurile unul sub altul */
-    align-items: center; /* Centrează cardurile pe orizontală */
-    justify-content: center; /* Asigură că sunt centrate pe verticală */
-    gap: 2rem; /* Spațiere între carduri */
-    width: 100%; /* Asigură că containerul ocupă întreaga lățime */
-    padding-left: 0; /* Elimină orice padding lateral */
-    padding-right: 0; /* Elimină orice padding lateral */
-    position: relative; /* Elimină orice poziționare absolută */
-    left: 0; /* Elimină orice deplasare laterală */
-    transform: none; /* Elimină orice transformare */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    left: 0;
+    transform: none;
     margin: 0.4rem;
   }
 
   .owtsSection-card {
-    width: 70%; /* Cardurile ocupă 90% din lățimea containerului */
-    height: auto; /* Înălțimea automată pentru a se adapta conținutului */
-    margin-bottom: 2rem; /* Spațiu între carduri */
-    padding: 2rem; /* Ajustează padding-ul pentru mobil */
-    text-align: center; /* Centrează textul în card */
-    box-sizing: border-box; /* Asigură că padding-ul nu afectează lățimea cardului */
+    width: 70%;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .owtsSection-card:nth-child(1),
+  .owtsSection-card:nth-child(3),
+  .owtsSection-card:nth-child(5) {
+    position: relative;
   }
 
   .owtsSection-card:nth-child(1) {
-    position: relative; /* Asigură că left funcționează */
-    left: -3rem; /* Deplasează elementul la 10px față de poziția inițială */
+    left: -3rem;
   }
 
   .owtsSection-card:nth-child(3) {
-    position: relative; /* Asigură că left funcționează */
-    left: -1rem; /* Deplasează elementul la 10px față de poziția inițială */
+    left: -1rem;
   }
 
   .owtsSection-card:nth-child(5) {
-    position: relative; /* Asigură că left funcționează */
-    left: 1.7rem; /* Deplasează elementul la 10px față de poziția inițială */
+    left: 1.7rem;
   }
 
   .owtsSection-card-icon {
-    font-size: 3rem; /* Ajustează dimensiunea iconiței */
+    font-size: 3rem;
   }
 
   .owtsSection-card-title {
-    font-size: 2rem; /* Ajustează dimensiunea titlului */
+    font-size: 2rem;
   }
 
   .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează dimensiunea textului */
-    text-align: justify; /* Așează textul justificat */
+    font-size: 1.4rem;
+    text-align: justify;
   }
 
   .owtsSection-arrow {
-    display: none; /* Ascunde săgețile pe dispozitive mici */
+    display: none;
   }
 
   .ourMissionHP-heading {
@@ -988,6 +852,7 @@ body {
     opacity: 1;
     top: 3rem;
   }
+
   .interactive-golden-button {
     position: relative;
     top: 17rem;
@@ -995,284 +860,192 @@ body {
   }
 }
 
-@media (max-width: 1440px) {
-  .owtsSection {
-    height: 100vh; /* Setează înălțimea la 90% din viewport */
+/* Max Width 768px */
+@media (max-width: 768px) {
+  .header-div {
+    left: 25rem;
   }
 
-  .owtsSection-cards-container {
-    gap: 1.5rem; /* Spațiere și mai mică pe ecrane mai mici */
-  }
-
-  .owtsSection-card {
-    width: 45rem; /* Redu și mai mult dimensiunea cardurilor */
-    height: 35rem; /* Redu și mai mult înălțimea */
-    padding: 2.5rem; /* Ajustează padding-ul */
-  }
-
-  .owtsSection-card-icon {
-    font-size: 3.5rem; /* Ajustează dimensiunea iconiței */
-  }
-
-  .owtsSection-card-title {
-    font-size: 1.8rem; /* Redu titlurile pentru ecrane și mai mici */
-  }
-
-  .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează fontul descrierilor */
-    text-align: center;
-  }
-
-  /* Adaugă margine doar la primul card */
-  .owtsSection-card:first-child {
-    margin-left: 4rem; /* Adaugă margine pe stânga */
-  }
-
-  /* Adaugă margine doar la ultimul card */
-  .owtsSection-card:last-child {
-    margin-right: 6rem; /* Adaugă margine pe dreapta */
-  }
-  .owtsSection-headline {
-    font-size: 6rem;
-    color: #ae8507; /* Culoare aurie */
-    text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0%; /* Headline-ul rămâne sus */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 1680px) {
-  .owtsSection {
-    height: 100vh; /* Setează înălțimea la 90% din viewport */
-  }
-
-  .owtsSection-cards-container {
-    gap: 1.5rem; /* Spațiere și mai mică pe ecrane mai mici */
-  }
-
-  .owtsSection-card {
-    width: 45rem; /* Redu și mai mult dimensiunea cardurilor */
-    height: 35rem; /* Redu și mai mult înălțimea */
-    padding: 2.5rem; /* Ajustează padding-ul */
-  }
-
-  .owtsSection-card-icon {
-    font-size: 3.5rem; /* Ajustează dimensiunea iconiței */
-  }
-
-  .owtsSection-card-title {
-    font-size: 1.8rem; /* Redu titlurile pentru ecrane și mai mici */
-  }
-
-  .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează fontul descrierilor */
-    text-align: center;
-  }
-
-  /* Adaugă margine doar la primul card */
-  .owtsSection-card:first-child {
-    margin-left: 4rem; /* Adaugă margine pe stânga */
-  }
-
-  /* Adaugă margine doar la ultimul card */
-  .owtsSection-card:last-child {
-    margin-right: 6rem; /* Adaugă margine pe dreapta */
-  }
-  .owtsSection-headline {
-    font-size: 6rem;
-    color: #ae8507; /* Culoare aurie */
-    text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0%; /* Headline-ul rămâne sus */
-    left: 50%;
-    transform: translateX(-50%);
+  .interactive-golden-button {
+    top: 5rem !important;
   }
 
   .image-container:first-child {
-    width: 45%; /* iMac - mărit cu 15% */
-    left: 5%;
-    bottom: 60%; /* Poziția originală */
+    width: 45%;
+    left: 15% !important;
+    bottom: 60% !important;
   }
 
   .image-container:nth-child(2) {
-    width: 55.5%; /* MacBook - mărit cu 15% */
-    left: 45%; /* Poziționat la dreapta iMac-ului */
-    bottom: 75%; /* Mutat mai sus pentru a alinia cu iMac-ul */
+    width: 55.5%;
+    left: 45%;
+    bottom: 92% !important;
   }
 
   .image-container:nth-child(3) {
-    width: 15%; /* iPhone - redus cu 50% */
-    left: 40%; /* Mutat în stânga pentru a se poziționa între iMac și MacBook */
-    bottom: 45%; /* Mutat mai sus pentru a fi centrat */
+    width: 15%;
+    left: 40%;
+    bottom: 10% !important;
     z-index: 2;
   }
-  .text-section {
-    margin-right: 2rem; /* Ajustează valoarea după preferințe */
-    text-align: justify; /* Opțional, pentru a alinia textul la ambele margini */
-    margin-bottom: 8rem;
+
+  .home-page-container {
+    margin-bottom: 20rem !important;
   }
 
-  .text-section p {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 1251px) {
-  .owtsSection {
-    height: 100vh; /* Setează înălțimea la 90% din viewport */
-  }
-
+  .hero-div,
+  .ourServicesHP-section,
+  .home-page-container,
   .owtsSection-cards-container {
-    gap: 1.5rem; /* Spațiere și mai mică pe ecrane mai mici */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .owtsSection-card {
-    width: 45rem; /* Redu și mai mult dimensiunea cardurilor */
-    height: 45rem; /* Redu și mai mult înălțimea */
-    padding: 2.5rem; /* Ajustează padding-ul */
+  .AnimatedComponentHP {
+    margin-top: 25rem;
   }
 
-  .owtsSection-card-icon {
-    font-size: 3.5rem; /* Ajustează dimensiunea iconiței */
-  }
-
-  .owtsSection-card-title {
-    font-size: 1.8rem; /* Redu titlurile pentru ecrane și mai mici */
-  }
-
-  .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează fontul descrierilor */
-    text-align: center;
-  }
-
-  /* Adaugă margine doar la primul card */
-  .owtsSection-card:first-child {
-    margin-left: 4rem; /* Adaugă margine pe stânga */
-  }
-
-  /* Adaugă margine doar la ultimul card */
-  .owtsSection-card:last-child {
-    margin-right: 6rem; /* Adaugă margine pe dreapta */
-  }
-  .owtsSection-headline {
-    font-size: 6rem;
-    color: #ae8507; /* Culoare aurie */
-    text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0%; /* Headline-ul rămâne sus */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 1100px) {
-  .owtsSection-card {
-    width: 45rem; /* Redu și mai mult dimensiunea cardurilor */
-    height: 50rem; /* Redu și mai mult înălțimea */
-    padding: 2.5rem; /* Ajustează padding-ul */
-  }
-  .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează fontul descrierilor */
-    text-align: center;
-  }
-}
-@media (max-width: 966px) {
-  /* OWTS Section */
+  /* OWTS Section adjustments */
   .owtsSection {
     background: #000000;
-    height: 80vh; /* Înălțimea secțiunii să fie automată */
+    height: 80vh;
     width: 100vw;
     position: relative;
-    padding-top: 5rem; /* Spațiu pentru headline */
-    padding-bottom: 135rem; /* Spațiu jos pentru a evita suprapunerea */
+    padding-top: 5rem;
+    padding-bottom: 130rem;
   }
 
   .owtsSection-headline {
-    font-size: 3rem; /* Ajustează dimensiunea titlului pentru mobil */
+    font-size: 3rem;
     margin-bottom: 2rem;
-    text-align: center; /* Asigură că titlul este centrat */
+    text-align: center;
     margin-top: 20rem;
+    top: -28rem !important;
   }
 
-  /* Containerul de carduri */
   .owtsSection-cards-container {
-    display: flex;
-    flex-direction: column; /* Afișează cardurile unul sub altul */
-    align-items: center; /* Centrează cardurile pe orizontală */
-    justify-content: center; /* Asigură că sunt centrate pe verticală */
-    gap: 2rem; /* Spațiere între carduri */
-    width: 100%; /* Asigură că containerul ocupă întreaga lățime */
-    padding-left: 0; /* Elimină orice padding lateral */
-    padding-right: 0; /* Elimină orice padding lateral */
-    position: relative; /* Elimină orice poziționare absolută */
-    left: 0; /* Elimină orice deplasare laterală */
-    transform: none; /* Elimină orice transformare */
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    left: 0rem !important;
     margin: 0.4rem;
   }
 
   .owtsSection-card {
-    width: 70%; /* Cardurile ocupă 90% din lățimea containerului */
-    height: auto; /* Înălțimea automată pentru a se adapta conținutului */
-    margin-bottom: 2rem; /* Spațiu între carduri */
-    padding: 2rem; /* Ajustează padding-ul pentru mobil */
-    text-align: center; /* Centrează textul în card */
-    box-sizing: border-box; /* Asigură că padding-ul nu afectează lățimea cardului */
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .owtsSection-card:nth-child(1),
+  .owtsSection-card:nth-child(3),
+  .owtsSection-card:nth-child(5) {
+    position: relative;
   }
 
   .owtsSection-card:nth-child(1) {
-    position: relative; /* Asigură că left funcționează */
-    left: -3rem; /* Deplasează elementul la 10px față de poziția inițială */
+    left: -3rem;
   }
 
   .owtsSection-card:nth-child(3) {
-    position: relative; /* Asigură că left funcționează */
-    left: -1rem; /* Deplasează elementul la 10px față de poziția inițială */
+    left: -1rem;
   }
 
   .owtsSection-card:nth-child(5) {
-    position: relative; /* Asigură că left funcționează */
-    left: 1.7rem; /* Deplasează elementul la 10px față de poziția inițială */
-  }
-
-  .owtsSection-card-icon {
-    font-size: 3rem; /* Ajustează dimensiunea iconiței */
-  }
-
-  .owtsSection-card-title {
-    font-size: 2rem; /* Ajustează dimensiunea titlului */
-  }
-
-  .owtsSection-card-description {
-    font-size: 1.4rem; /* Ajustează dimensiunea textului */
-    text-align: justify; /* Așează textul justificat */
+    left: 1.7rem;
   }
 
   .owtsSection-arrow {
-    display: none; /* Ascunde săgețile pe dispozitive mici */
+    display: none;
   }
 }
+
+/* Max Width 667px */
+@media (max-width: 667px) {
+  .heading {
+    font-size: 5rem;
+  }
+
+  .text-section {
+    margin-right: 1rem;
+  }
+
+  .text-section p {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-right: 0.5rem;
+    text-align: center;
+    hyphens: auto;
+  }
+
+  .home-page-container {
+    position: relative;
+    width: 96%;
+    height: 120vh;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .left-side {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .right-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .form-image {
+    display: none;
+  }
+
+  /* Adjust image-container sizes and positions */
+  .image-container:first-child {
+    width: 75% !important;
+    left: 18% !important;
+    bottom: 88% !important;
+  }
+
+  .image-container:nth-child(2) {
+    width: 90% !important;
+    left: 10% !important;
+    bottom: 50% !important;
+  }
+
+  .image-container:nth-child(3) {
+    width: 45% !important;
+    left: 35% !important;
+    bottom: 3% !important;
+    z-index: 2;
+  }
+
+  .header-div {
+    left: 41%;
+    top: 65%;
+  }
+
+  .services-card {
+    height: 60rem;
+  }
+}
+
+/* Max Width 963px */
 @media (max-width: 963px) {
   .form-image {
-    transform: scale(
-      0.7
-    ); /* Redimensionează imaginea la 50% din dimensiunea originală */
-    transform-origin: center; /* Asigură că imaginea este redimensionată din centrul său */
+    transform: scale(0.7); /* Resize image */
+    transform-origin: center;
   }
 }
