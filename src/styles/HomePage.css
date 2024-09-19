@@ -586,11 +586,12 @@ body {
 /* OWTS Section */
 .owtsSection {
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  min-height: 80vh; /* Permite secțiunii să crească în înălțime */
+  min-height: 70vh; /* Permite secțiunii să crească în înălțime */
   width: 100vw;
   position: relative;
   padding-top: 50px; /* Spațiu pentru headline */
-  padding-bottom: 50px; /* Adaugă padding jos */
+  padding-bottom: 70px; /* Adaugă padding jos */
+  overflow: hidden;
 }
 
 .owtsSection-headline {
@@ -623,6 +624,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%); */
   max-width: 100%;
+  overflow-y: hidden;
 }
 
 .owtsSection-card {
@@ -661,7 +663,7 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
     visibility: hidden;
   }
   to {
@@ -936,17 +938,17 @@ body {
   }
 
   .owtsSection-card:nth-child(1) {
-    position: relative; /* Asigură că `left` funcționează */
+    position: relative; /* Asigură că left funcționează */
     left: -3rem; /* Deplasează elementul la 10px față de poziția inițială */
   }
 
   .owtsSection-card:nth-child(3) {
-    position: relative; /* Asigură că `left` funcționează */
+    position: relative; /* Asigură că left funcționează */
     left: -1rem; /* Deplasează elementul la 10px față de poziția inițială */
   }
 
   .owtsSection-card:nth-child(5) {
-    position: relative; /* Asigură că `left` funcționează */
+    position: relative; /* Asigură că left funcționează */
     left: 1.7rem; /* Deplasează elementul la 10px față de poziția inițială */
   }
 
@@ -1224,17 +1226,17 @@ body {
   }
 
   .owtsSection-card:nth-child(1) {
-    position: relative; /* Asigură că `left` funcționează */
+    position: relative; /* Asigură că left funcționează */
     left: -3rem; /* Deplasează elementul la 10px față de poziția inițială */
   }
 
   .owtsSection-card:nth-child(3) {
-    position: relative; /* Asigură că `left` funcționează */
+    position: relative; /* Asigură că left funcționează */
     left: -1rem; /* Deplasează elementul la 10px față de poziția inițială */
   }
 
   .owtsSection-card:nth-child(5) {
-    position: relative; /* Asigură că `left` funcționează */
+    position: relative; /* Asigură că left funcționează */
     left: 1.7rem; /* Deplasează elementul la 10px față de poziția inițială */
   }
 
@@ -1260,6 +1262,6 @@ body {
     transform: scale(
       0.7
     ); /* Redimensionează imaginea la 50% din dimensiunea originală */
-    transform-origin: center; /* Asigură că imaginea este redimensionată din centrul său */
+    transform-origin: center; /* Asigură că imaginea este redimensionată din centrul său */
   }
 }
