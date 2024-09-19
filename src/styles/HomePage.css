@@ -586,14 +586,15 @@ body {
 /* OWTS Section */
 .owtsSection {
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  height: 80vh;
+  min-height: 80vh; /* Permite secțiunii să crească în înălțime */
   width: 100vw;
   position: relative;
   padding-top: 50px; /* Spațiu pentru headline */
+  padding-bottom: 50px; /* Adaugă padding jos */
 }
 
 .owtsSection-headline {
-  font-size: 6rem;
+  font-size: 2rem;
   color: #ae8507; /* Culoare aurie */
   text-align: center;
   margin-bottom: 2rem;
@@ -601,24 +602,26 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  position: absolute;
-  top: 5%; /* Headline-ul rămâne sus */
+  /* Elimină poziționarea absolută */
+  /* position: absolute;
+  top: 5%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
+  margin-top: -6px;
 }
 
-/* Containerul de carduri */
 .owtsSection-cards-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 4rem; /* Adaugă mai mult spațiu între carduri și săgeți */
+  gap: 4rem; /* Spațiu între carduri și săgeți */
   margin-top: 100px;
-  position: absolute;
+  /* Elimină poziționarea absolută */
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   max-width: 100%;
 }
 
@@ -628,8 +631,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 4rem; /* Mărește padding-ul pentru a mări cardurile */
-  width: 60rem; /* Mărește lățimea cardurilor */
-  height: 50rem; /* Mărește înălțimea cardurilor */
+  width: 60rem; /* Lățimea cardurilor */
+  height: 60rem; /* Mărește înălțimea cardurilor */
   text-align: center;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -641,35 +644,88 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.owtsSection-card-icon {
-  font-size: 5rem; /* Mărește iconițele */
+/* Stilizare săgeți */
+.owtsSection-arrow {
+  font-size: 4rem;
   color: #ae8507;
-  margin-bottom: 1.5rem;
 }
 
-.owtsSection-card-title {
-  font-size: 2.5rem; /* Mărește textul titlurilor */
-  margin-bottom: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: linear-gradient(
-    90deg,
-    #ffffff,
-    #ae8507
-  ); /* De la alb (#ffffff) la aur (#ae8507) */
-  -webkit-background-clip: text;
-  color: transparent;
+/* Animații */
+.owtsSection-card,
+.owtsSection-arrow {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
 }
 
-.owtsSection-card-description {
-  color: #b3b3b3;
-  font-size: 2rem; /* Mărește dimensiunea textului */
-  line-height: 1.6;
-  padding: 0 10px;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  text-align: justify;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+/* Animații pentru fiecare element */
+.owtsSection.show .owtsSection-cards-container > *:nth-child(1) {
+  animation: fadeInUp 0.5s ease forwards 0.5s;
+}
+.owtsSection.show .owtsSection-cards-container > *:nth-child(2) {
+  animation: fadeInUp 0.5s ease forwards 1s;
+}
+.owtsSection.show .owtsSection-cards-container > *:nth-child(3) {
+  animation: fadeInUp 0.5s ease forwards 1.5s;
+}
+.owtsSection.show .owtsSection-cards-container > *:nth-child(4) {
+  animation: fadeInUp 0.5s ease forwards 2s;
+}
+.owtsSection.show .owtsSection-cards-container > *:nth-child(5) {
+  animation: fadeInUp 0.5s ease forwards 2.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .owtsSection {
+    /* Elimină înălțimea fixă */
+    min-height: 100vh;
+  }
+
+  .owtsSection-cards-container {
+    gap: 1.5rem;
+  }
+
+  .owtsSection-card {
+    width: 45rem;
+    height: 60rem; /* Păstrează înălțimea mărită */
+    padding: 2.5rem;
+  }
+
+  .owtsSection-card-icon {
+    font-size: 3.5rem;
+  }
+
+  .owtsSection-card-title {
+    font-size: 1.8rem;
+  }
+
+  .owtsSection-card-description {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .owtsSection-headline {
+    display: none;
+    /* Elimină poziționarea absolută */
+    /* position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%); */
+  }
 }
 
 /* Stilizare săgeți */
