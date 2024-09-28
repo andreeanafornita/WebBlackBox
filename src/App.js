@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HomePage from './pages/HomePage';
 import Layout from "./Layout";
@@ -27,9 +27,41 @@ function App() {
     setLoading(false); // Actualizăm starea când încărcarea s-a terminat
   };
 
+  useEffect(() => {
+    // Dezactivează click-dreapta
+    document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+    // Dezactivează tastele funcționale pentru DevTools
+    const disableDevToolsShortcuts = (event) => {
+      if (
+        event.keyCode === 123 || // F12
+        (event.ctrlKey && event.shiftKey && event.keyCode === 73) || // Ctrl+Shift+I
+        (event.ctrlKey && event.shiftKey && event.keyCode === 74) || // Ctrl+Shift+J
+        (event.ctrlKey && event.keyCode === 85) || // Ctrl+U
+        (event.ctrlKey && event.shiftKey && event.keyCode === 67) // Ctrl+Shift+C
+      ) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener('keydown', disableDevToolsShortcuts);
+
+    return () => {
+      document.removeEventListener('contextmenu', (event) => event.preventDefault());
+      window.removeEventListener('keydown', disableDevToolsShortcuts);
+    };
+  }, []);
+
+
+
+
+
   if (loading) {
     return <LoadingScreen onLoaded={handleLoaded} />;
   }
+  
+
+  
 
   return (
     <div className="app-content">
