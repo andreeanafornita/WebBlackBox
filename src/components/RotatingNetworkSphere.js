@@ -2,6 +2,9 @@ import React, { useRef, useEffect } from 'react';
 
 const RotatingNetworkSphere = () => {
   const canvasRef = useRef(null);
+  const centerXRef = useRef(0);
+  const centerYRef = useRef(0);
+  const radiusRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -11,27 +14,27 @@ const RotatingNetworkSphere = () => {
     const resizeCanvas = () => {
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
+
+      // Update centerX, centerY, and radius
+      centerXRef.current = canvas.width * 0.70; // Shift the sphere to the right
+      centerYRef.current = (canvas.height / 2) - (canvas.height * 0.08);
+      radiusRef.current = Math.min(centerXRef.current, centerYRef.current) * 1;
     };
 
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    const centerX = canvas.width * 0.70; // Shift the sphere to the right
-const centerY = (canvas.height / 2) - (canvas.height * 0.08); // Keep the vertical positioning the same
-    const radius = Math.min(centerX, centerY) * 1; // Dimensiunea Sferei
-    const numPoints = 40; // Menținem un număr moderat de puncte
+    const numPoints = 40; // Number of points
     const points = [];
 
-
-    
+    // Generate points on a unit sphere
     for (let i = 0; i < numPoints; i++) {
       const theta = Math.random() * Math.PI * 2;
-      const phi = Math.random() * Math.PI;
-      points.push({
-        x: radius * Math.sin(phi) * Math.cos(theta),
-        y: radius * Math.sin(phi) * Math.sin(theta),
-        z: radius * Math.cos(phi),
-      });
+      const phi = Math.acos((Math.random() * 2) - 1); // Uniform distribution
+      const x = Math.sin(phi) * Math.cos(theta);
+      const y = Math.sin(phi) * Math.sin(theta);
+      const z = Math.cos(phi);
+      points.push({ x, y, z });
     }
 
     let rotation = 0;
@@ -40,13 +43,24 @@ const centerY = (canvas.height / 2) - (canvas.height * 0.08); // Keep the vertic
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       rotation += 0.002;
 
-      const rotatedPoints = points.map(point => ({
-        x: point.x * Math.cos(rotation) - point.z * Math.sin(rotation),
-        y: point.y,
-        z: point.x * Math.sin(rotation) + point.z * Math.cos(rotation),
-      }));
+      const centerX = centerXRef.current;
+      const centerY = centerYRef.current;
+      const radius = radiusRef.current;
 
-      // Desenăm liniile
+      const rotatedPoints = points.map(point => {
+        // Rotate around the Y-axis
+        const x = point.x * Math.cos(rotation) - point.z * Math.sin(rotation);
+        const y = point.y;
+        const z = point.x * Math.sin(rotation) + point.z * Math.cos(rotation);
+
+        return {
+          x: x * radius,
+          y: y * radius,
+          z: z * radius,
+        };
+      });
+
+      // Draw lines
       ctx.beginPath();
       rotatedPoints.forEach((point, i) => {
         const projectedX = point.x + centerX;
@@ -59,7 +73,8 @@ const centerY = (canvas.height / 2) - (canvas.height * 0.08); // Keep the vertic
           const dy = projectedY - otherProjectedY;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < radius * 1) { // Mărim raza de conectare pentru a genera mai multe linii
+          if (distance < radius * 1) {
+            // Adjust the connection radius as needed
             ctx.moveTo(projectedX, projectedY);
             ctx.lineTo(otherProjectedX, otherProjectedY);
           }
@@ -69,14 +84,14 @@ const centerY = (canvas.height / 2) - (canvas.height * 0.08); // Keep the vertic
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      // Desenăm punctele
+      // Draw points
       rotatedPoints.forEach(point => {
         const projectedX = point.x + centerX;
         const projectedY = point.y + centerY;
         const size = (point.z + radius) / (2 * radius);
 
         ctx.beginPath();
-        ctx.arc(projectedX, projectedY, size * 4, 0, Math.PI * 2); // Puncte mai mari
+        ctx.arc(projectedX, projectedY, size * 4, 0, Math.PI * 2); // Larger points
         ctx.fillStyle = `rgba(174, 133, 7, ${size * 0.8 + 0.2})`;
         ctx.fill();
       });

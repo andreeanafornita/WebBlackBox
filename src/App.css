@@ -20,6 +20,9 @@ h1, h2, h3, h4, h5, h6, p, a, span, div {
   height: 40vmin;
   pointer-events: none;
 }
+.dot{
+  max-width: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
