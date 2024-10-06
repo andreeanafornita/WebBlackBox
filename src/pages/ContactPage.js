@@ -96,7 +96,10 @@ export default function ContactPage() {
           {/* Container pentru informațiile de contact */}
           <div className="contactus-info-container">
             <p className="contactus-info" ref={emailRef}>
-              {t('contactPage.email')}: webblackbox.office@gmail.com
+              {t('contactPage.email')}: toma@webblackbox.com
+            </p>
+            <p className="contactus-info" ref={emailRef}>
+              {t('contactPage.email')}: daniela@webblackbox.com
             </p>
             <p className="contactus-info" ref={phoneRef}>
               {t('contactPage.phone')}: +40 (0)738159969
